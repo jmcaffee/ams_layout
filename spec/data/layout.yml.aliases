@@ -1,0 +1,613 @@
+---
+Borrower Name:
+- Alias1 Borrower Name
+- Alias2 Borrower Name
+Borrower SSN:
+- Alias1 Borrower SSN
+- Alias2 Borrower SSN
+Borrower Date of Birth:
+- Alias1 Borrower Date of Birth
+- Alias2 Borrower Date of Birth
+Income Type:
+- Alias1 Income Type
+- Alias2 Income Type
+Borrower Current FICO:
+- Alias1 Borrower Current FICO
+- Alias2 Borrower Current FICO
+Bankruptcy Status:
+- Alias1 Bankruptcy Status
+- Alias2 Bankruptcy Status
+Co-Borrower Name:
+- Alias1 Co-Borrower Name
+- Alias2 Co-Borrower Name
+Co-Borrower SSN:
+- Alias1 Co-Borrower SSN
+- Alias2 Co-Borrower SSN
+Co-Borrower Date of Birth:
+- Alias1 Co-Borrower Date of Birth
+- Alias2 Co-Borrower Date of Birth
+CoBorrower Income Type:
+- Alias1 CoBorrower Income Type
+- Alias2 CoBorrower Income Type
+Property Address:
+- Alias1 Property Address
+- Alias2 Property Address
+Property City:
+- Alias1 Property City
+- Alias2 Property City
+Property State:
+- Alias1 Property State
+- Alias2 Property State
+Property Zip:
+- Alias1 Property Zip
+- Alias2 Property Zip
+Number of Units:
+- Alias1 Number of Units
+- Alias2 Number of Units
+Owner Occupied:
+- Alias1 Owner Occupied
+- Alias2 Owner Occupied
+Property Type:
+- Alias1 Property Type
+- Alias2 Property Type
+Property Loss Status:
+- Alias1 Property Loss Status
+- Alias2 Property Loss Status
+BPO Property Valuation - Method:
+- Alias1 BPO Property Valuation - Method
+- Alias2 BPO Property Valuation - Method
+BPO Property Valuation - Date:
+- Alias1 BPO Property Valuation - Date
+- Alias2 BPO Property Valuation - Date
+BPO Property Valuation - As-Is Value:
+- Alias1 BPO Property Valuation - As-Is Value
+- Alias2 BPO Property Valuation - As-Is Value
+Property Condition:
+- Alias1 Property Condition
+- Alias2 Property Condition
+Appraisal Property Valuation Method:
+- Alias1 Appraisal Property Valuation Method
+- Alias2 Appraisal Property Valuation Method
+Appraisal Property Valuation Date:
+- Alias1 Appraisal Property Valuation Date
+- Alias2 Appraisal Property Valuation Date
+Appraisal Property Valuation As-Is Value:
+- Alias1 Appraisal Property Valuation As-Is Value
+- Alias2 Appraisal Property Valuation As-Is Value
+Appraisal Vendor Code:
+- Alias1 Appraisal Vendor Code
+- Alias2 Appraisal Vendor Code
+Hardship Reason:
+- Alias1 Hardship Reason
+- Alias2 Hardship Reason
+Occupancy Status:
+- Alias1 Occupancy Status
+- Alias2 Occupancy Status
+Delinquent Counselor Code:
+- Alias1 Delinquent Counselor Code
+- Alias2 Delinquent Counselor Code
+Agency Type:
+- Alias1 Agency Type
+- Alias2 Agency Type
+FFIEC:
+- Alias1 FFIEC
+- Alias2 FFIEC
+Pending Service Release:
+- Alias1 Pending Service Release
+- Alias2 Pending Service Release
+Account in Litigation:
+- Alias1 Account in Litigation
+- Alias2 Account in Litigation
+Bankruptcy Litigation:
+- Alias1 Bankruptcy Litigation
+- Alias2 Bankruptcy Litigation
+Delinquency Status:
+- Alias1 Delinquency Status
+- Alias2 Delinquency Status
+Borrower Commits to Sending Documents by Expiration Date:
+- Alias1 Borrower Commits to Sending Documents by Expiration Date
+- Alias2 Borrower Commits to Sending Documents by Expiration Date
+Income Verified:
+- Alias1 Income Verified
+- Alias2 Income Verified
+Documents Received:
+- Alias1 Documents Received
+- Alias2 Documents Received
+Docs Received Date:
+- Alias1 Docs Received Date
+- Alias2 Docs Received Date
+Foreclosure Status:
+- Alias1 Foreclosure Status
+- Alias2 Foreclosure Status
+Foreclosure Reinstatement Amount:
+- Alias1 Foreclosure Reinstatement Amount
+- Alias2 Foreclosure Reinstatement Amount
+Scheduled Foreclosure Sale Date:
+- Alias1 Scheduled Foreclosure Sale Date
+- Alias2 Scheduled Foreclosure Sale Date
+Anticipated Foreclosure Date:
+- Alias1 Anticipated Foreclosure Date
+- Alias2 Anticipated Foreclosure Date
+Has Escrow Account:
+- Alias1 Has Escrow Account
+- Alias2 Has Escrow Account
+Escrow Shortage for Advances:
+- Alias1 Escrow Shortage for Advances
+- Alias2 Escrow Shortage for Advances
+Current Escrow Balance:
+- Alias1 Current Escrow Balance
+- Alias2 Current Escrow Balance
+Pending Escrow Change:
+- Alias1 Pending Escrow Change
+- Alias2 Pending Escrow Change
+Association Dues/ Fees before modification:
+- Alias1 Association Dues/ Fees before modification
+- Alias2 Association Dues/ Fees before modification
+Escrow Complete:
+- Alias1 Escrow Complete
+- Alias2 Escrow Complete
+Optional Insurance:
+- Alias1 Optional Insurance
+- Alias2 Optional Insurance
+Capitalized Monthly Escrow Payment:
+- Alias1 Capitalized Monthly Escrow Payment
+- Alias2 Capitalized Monthly Escrow Payment
+Monthly Partial Escrow Payment:
+- Alias1 Monthly Partial Escrow Payment
+- Alias2 Monthly Partial Escrow Payment
+Non-Capitalized Monthly Escrow Payment:
+- Alias1 Non-Capitalized Monthly Escrow Payment
+- Alias2 Non-Capitalized Monthly Escrow Payment
+Monthly Ancillary Fee Payment for Taxes and Insurance:
+- Alias1 Monthly Ancillary Fee Payment for Taxes and Insurance
+- Alias2 Monthly Ancillary Fee Payment for Taxes and Insurance
+Corporate Advances for DQ Taxes:
+- Alias1 Corporate Advances for DQ Taxes
+- Alias2 Corporate Advances for DQ Taxes
+Corporate Advances for Forced Placed Insurance:
+- Alias1 Corporate Advances for Forced Placed Insurance
+- Alias2 Corporate Advances for Forced Placed Insurance
+Corporate Advances Non Tax Non Insurance:
+- Alias1 Corporate Advances Non Tax Non Insurance
+- Alias2 Corporate Advances Non Tax Non Insurance
+Past Due Payments and Fees:
+- Alias1 Past Due Payments and Fees
+- Alias2 Past Due Payments and Fees
+Delinquent Taxes:
+- Alias1 Delinquent Taxes
+- Alias2 Delinquent Taxes
+Delinquent Insurance:
+- Alias1 Delinquent Insurance
+- Alias2 Delinquent Insurance
+Servicing Advances:
+- Alias1 Servicing Advances
+- Alias2 Servicing Advances
+Mod Agreement Expiration Date:
+- Alias1 Mod Agreement Expiration Date
+- Alias2 Mod Agreement Expiration Date
+Mod Agreement Received Date:
+- Alias1 Mod Agreement Received Date
+- Alias2 Mod Agreement Received Date
+Mod Agreement Validated:
+- Alias1 Mod Agreement Validated
+- Alias2 Mod Agreement Validated
+Resent Mod Agreement Expiration Date:
+- Alias1 Resent Mod Agreement Expiration Date
+- Alias2 Resent Mod Agreement Expiration Date
+Resent Mod Agreement Received Date:
+- Alias1 Resent Mod Agreement Received Date
+- Alias2 Resent Mod Agreement Received Date
+Customer Requested Withdrawal:
+- Alias1 Customer Requested Withdrawal
+- Alias2 Customer Requested Withdrawal
+Appeal Reason:
+- Alias1 Appeal Reason
+- Alias2 Appeal Reason
+Appeal Docs Expiration Date:
+- Alias1 Appeal Docs Expiration Date
+- Alias2 Appeal Docs Expiration Date
+Appeal Docs Received:
+- Alias1 Appeal Docs Received
+- Alias2 Appeal Docs Received
+Appeal Docs Received Date:
+- Alias1 Appeal Docs Received Date
+- Alias2 Appeal Docs Received Date
+Appeal Expiration Date:
+- Alias1 Appeal Expiration Date
+- Alias2 Appeal Expiration Date
+Reconsideration Reason:
+- Alias1 Reconsideration Reason
+- Alias2 Reconsideration Reason
+Reconsideration/Decline Comments:
+- Alias1 Reconsideration/Decline Comments
+- Alias2 Reconsideration/Decline Comments
+Counter Type:
+- Alias1 Counter Type
+- Alias2 Counter Type
+Approval:
+- Alias1 Approval
+- Alias2 Approval
+Manual Decline:
+- Alias1 Manual Decline
+- Alias2 Manual Decline
+Adverse Action Code(s) (separated w/comma or space):
+- Alias1 Adverse Action Code(s) (separated w/comma or space)
+- Alias2 Adverse Action Code(s) (separated w/comma or space)
+Manual Decline Reason Codes (separated w/comma or space):
+- Alias1 Manual Decline Reason Codes (separated w/comma or space)
+- Alias2 Manual Decline Reason Codes (separated w/comma or space)
+Manager By-Pass Reason:
+- Alias1 Manager By-Pass Reason
+- Alias2 Manager By-Pass Reason
+Manual Decline Comments:
+- Alias1 Manual Decline Comments
+- Alias2 Manual Decline Comments
+Rate Term Exception Reason:
+- Alias1 Rate Term Exception Reason
+- Alias2 Rate Term Exception Reason
+Exception Mod Rate:
+- Alias1 Exception Mod Rate
+- Alias2 Exception Mod Rate
+Exception Mod Term:
+- Alias1 Exception Mod Term
+- Alias2 Exception Mod Term
+Document Exception Reason:
+- Alias1 Document Exception Reason
+- Alias2 Document Exception Reason
+Exception Document Expiration Date:
+- Alias1 Exception Document Expiration Date
+- Alias2 Exception Document Expiration Date
+Lien Position:
+- Alias1 Lien Position
+- Alias2 Lien Position
+Platform:
+- Alias1 Platform
+- Alias2 Platform
+Investor Code:
+- Alias1 Investor Code
+- Alias2 Investor Code
+Product Type:
+- Alias1 Product Type
+- Alias2 Product Type
+Prepay Flag:
+- Alias1 Prepay Flag
+- Alias2 Prepay Flag
+Due Day:
+- Alias1 Due Day
+- Alias2 Due Day
+IO Indicator:
+- Alias1 IO Indicator
+- Alias2 IO Indicator
+GSE Loan Number:
+- Alias1 GSE Loan Number
+- Alias2 GSE Loan Number
+PMI Insurance:
+- Alias1 PMI Insurance
+- Alias2 PMI Insurance
+Original Amortization:
+- Alias1 Original Amortization
+- Alias2 Original Amortization
+Current Unpaid Balance:
+- Alias1 Current Unpaid Balance
+- Alias2 Current Unpaid Balance
+DQ PI Payment:
+- Alias1 DQ PI Payment
+- Alias2 DQ PI Payment
+Current Interest Rate:
+- Alias1 Current Interest Rate
+- Alias2 Current Interest Rate
+Current Monthly Payment:
+- Alias1 Current Monthly Payment
+- Alias2 Current Monthly Payment
+Current Principal Payment:
+- Alias1 Current Principal Payment
+- Alias2 Current Principal Payment
+Current Interest Payment:
+- Alias1 Current Interest Payment
+- Alias2 Current Interest Payment
+Principal Forbearance Amount:
+- Alias1 Principal Forbearance Amount
+- Alias2 Principal Forbearance Amount
+Deferred Interest:
+- Alias1 Deferred Interest
+- Alias2 Deferred Interest
+HELOC Loan Alert:
+- Alias1 HELOC Loan Alert
+- Alias2 HELOC Loan Alert
+Monthly Escrow Amount:
+- Alias1 Monthly Escrow Amount
+- Alias2 Monthly Escrow Amount
+Remaining Original Term:
+- Alias1 Remaining Original Term
+- Alias2 Remaining Original Term
+Suspense Amount:
+- Alias1 Suspense Amount
+- Alias2 Suspense Amount
+Payright Rewards Flag:
+- Alias1 Payright Rewards Flag
+- Alias2 Payright Rewards Flag
+Pure Interest Rate:
+- Alias1 Pure Interest Rate
+- Alias2 Pure Interest Rate
+Is Personal Home Loan:
+- Alias1 Is Personal Home Loan
+- Alias2 Is Personal Home Loan
+Pure PI Payment:
+- Alias1 Pure PI Payment
+- Alias2 Pure PI Payment
+Is Principal Write Down:
+- Alias1 Is Principal Write Down
+- Alias2 Is Principal Write Down
+Close Code:
+- Alias1 Close Code
+- Alias2 Close Code
+Origination Date:
+- Alias1 Origination Date
+- Alias2 Origination Date
+Current Maturity Date:
+- Alias1 Current Maturity Date
+- Alias2 Current Maturity Date
+Original Property Value:
+- Alias1 Original Property Value
+- Alias2 Original Property Value
+Original Loan Term:
+- Alias1 Original Loan Term
+- Alias2 Original Loan Term
+Original LTV:
+- Alias1 Original LTV
+- Alias2 Original LTV
+Origination Front-End DTI:
+- Alias1 Origination Front-End DTI
+- Alias2 Origination Front-End DTI
+Investment Property At Origination:
+- Alias1 Investment Property At Origination
+- Alias2 Investment Property At Origination
+Gross Disposable Income at Origination:
+- Alias1 Gross Disposable Income at Origination
+- Alias2 Gross Disposable Income at Origination
+First ARM Reset Date:
+- Alias1 First ARM Reset Date
+- Alias2 First ARM Reset Date
+Current Next Rate Reset Date:
+- Alias1 Current Next Rate Reset Date
+- Alias2 Current Next Rate Reset Date
+Min ARM Adjustment:
+- Alias1 Min ARM Adjustment
+- Alias2 Min ARM Adjustment
+Max ARM Adjustment:
+- Alias1 Max ARM Adjustment
+- Alias2 Max ARM Adjustment
+ARM Floor:
+- Alias1 ARM Floor
+- Alias2 ARM Floor
+ARM Ceiling:
+- Alias1 ARM Ceiling
+- Alias2 ARM Ceiling
+Balloon Payment Due Date:
+- Alias1 Balloon Payment Due Date
+- Alias2 Balloon Payment Due Date
+Note Reset Rate:
+- Alias1 Note Reset Rate
+- Alias2 Note Reset Rate
+Failed Trial Counter-Payments:
+- Alias1 Failed Trial Counter-Payments
+- Alias2 Failed Trial Counter-Payments
+Failed Trial Counter-Mod Agreement Not Recd:
+- Alias1 Failed Trial Counter-Mod Agreement Not Recd
+- Alias2 Failed Trial Counter-Mod Agreement Not Recd
+Number of FAP II Mods Activated:
+- Alias1 Number of FAP II Mods Activated
+- Alias2 Number of FAP II Mods Activated
+FAP II Previous 6 Payment Mod:
+- Alias1 FAP II Previous 6 Payment Mod
+- Alias2 FAP II Previous 6 Payment Mod
+Previous FAP II Mod Failed Count:
+- Alias1 Previous FAP II Mod Failed Count
+- Alias2 Previous FAP II Mod Failed Count
+Previous Foreclosure Mod Approval Date:
+- Alias1 Previous Foreclosure Mod Approval Date
+- Alias2 Previous Foreclosure Mod Approval Date
+Total FIM Restructures Previous 60 Months:
+- Alias1 Total FIM Restructures Previous 60 Months
+- Alias2 Total FIM Restructures Previous 60 Months
+Mod Count:
+- Alias1 Mod Count
+- Alias2 Mod Count
+FIM Modifications:
+- Alias1 FIM Modifications
+- Alias2 FIM Modifications
+Date of last FIM Modification:
+- Alias1 Date of last FIM Modification
+- Alias2 Date of last FIM Modification
+FIM Re-ages:
+- Alias1 FIM Re-ages
+- Alias2 FIM Re-ages
+Date of last FIM Re-age:
+- Alias1 Date of last FIM Re-age
+- Alias2 Date of last FIM Re-age
+MN Re-ages:
+- Alias1 MN Re-ages
+- Alias2 MN Re-ages
+Currently on Active Mod:
+- Alias1 Currently on Active Mod
+- Alias2 Currently on Active Mod
+Previous FAP II Mod Forbearance Amount:
+- Alias1 Previous FAP II Mod Forbearance Amount
+- Alias2 Previous FAP II Mod Forbearance Amount
+Current Modification Term:
+- Alias1 Current Modification Term
+- Alias2 Current Modification Term
+Previous FAP II Mod Term:
+- Alias1 Previous FAP II Mod Term
+- Alias2 Previous FAP II Mod Term
+Previous FAP II Mod Payment:
+- Alias1 Previous FAP II Mod Payment
+- Alias2 Previous FAP II Mod Payment
+Previous FAP II Mod Interest Rate:
+- Alias1 Previous FAP II Mod Interest Rate
+- Alias2 Previous FAP II Mod Interest Rate
+Previous FAP II Mod Total Income:
+- Alias1 Previous FAP II Mod Total Income
+- Alias2 Previous FAP II Mod Total Income
+Previous FAP II Mod DTI:
+- Alias1 Previous FAP II Mod DTI
+- Alias2 Previous FAP II Mod DTI
+Previous FAP II Mod Disposable Income:
+- Alias1 Previous FAP II Mod Disposable Income
+- Alias2 Previous FAP II Mod Disposable Income
+PCO Value:
+- Alias1 PCO Value
+- Alias2 PCO Value
+CIT 314 Flag:
+- Alias1 CIT 314 Flag
+- Alias2 CIT 314 Flag
+Vendor Code:
+- Alias1 Vendor Code
+- Alias2 Vendor Code
+CIT 690 Flag:
+- Alias1 CIT 690 Flag
+- Alias2 CIT 690 Flag
+Interest Method Type:
+- Alias1 Interest Method Type
+- Alias2 Interest Method Type
+Pool ID:
+- Alias1 Pool ID
+- Alias2 Pool ID
+Securitized Indicator:
+- Alias1 Securitized Indicator
+- Alias2 Securitized Indicator
+Second Review-Approval:
+- Alias1 Second Review-Approval
+- Alias2 Second Review-Approval
+Second Review-Decline:
+- Alias1 Second Review-Decline
+- Alias2 Second Review-Decline
+Second Review Override Code(s) (separated w/comma or space):
+- Alias1 Second Review Override Code(s) (separated w/comma or space)
+- Alias2 Second Review Override Code(s) (separated w/comma or space)
+Second Review-Comment:
+- Alias1 Second Review-Comment
+- Alias2 Second Review-Comment
+Second Review-Pending Docs:
+- Alias1 Second Review-Pending Docs
+- Alias2 Second Review-Pending Docs
+Manual Decline Validation:
+- Alias1 Manual Decline Validation
+- Alias2 Manual Decline Validation
+Second Review-Pending Mod:
+- Alias1 Second Review-Pending Mod
+- Alias2 Second Review-Pending Mod
+Second Review-Mod Agreement Received Date:
+- Alias1 Second Review-Mod Agreement Received Date
+- Alias2 Second Review-Mod Agreement Received Date
+Appeal Hard Decline-Review Completed:
+- Alias1 Appeal Hard Decline-Review Completed
+- Alias2 Appeal Hard Decline-Review Completed
+Appeal Customer Input-Review Completed:
+- Alias1 Appeal Customer Input-Review Completed
+- Alias2 Appeal Customer Input-Review Completed
+Appeal Decision Expiration Date:
+- Alias1 Appeal Decision Expiration Date
+- Alias2 Appeal Decision Expiration Date
+Appeal UW Review And Prescreen:
+- Alias1 Appeal UW Review And Prescreen
+- Alias2 Appeal UW Review And Prescreen
+Borrower Sending Docs:
+- Alias1 Borrower Sending Docs
+- Alias2 Borrower Sending Docs
+Appeal Income Verified:
+- Alias1 Appeal Income Verified
+- Alias2 Appeal Income Verified
+Borrower Stated Property Value:
+- Alias1 Borrower Stated Property Value
+- Alias2 Borrower Stated Property Value
+Appeal Appraisal Required:
+- Alias1 Appeal Appraisal Required
+- Alias2 Appeal Appraisal Required
+Appraisal Funds Expiration Date:
+- Alias1 Appraisal Funds Expiration Date
+- Alias2 Appraisal Funds Expiration Date
+Stage 227 Task Completed:
+- Alias1 Stage 227 Task Completed
+- Alias2 Stage 227 Task Completed
+Stage 228 Entry Date:
+- Alias1 Stage 228 Entry Date
+- Alias2 Stage 228 Entry Date
+CIT 73 Flag:
+- Alias1 CIT 73 Flag
+- Alias2 CIT 73 Flag
+Income 1:
+- Alias1 Income 1
+- Alias2 Income 1
+Appeal 2nd Review-Approval:
+- Alias1 Appeal 2nd Review-Approval
+- Alias2 Appeal 2nd Review-Approval
+Appeal 2nd Review-Decline:
+- Alias1 Appeal 2nd Review-Decline
+- Alias2 Appeal 2nd Review-Decline
+Appeal 2nd Review-Override Code(s) (separated w/comma or space):
+- Alias1 Appeal 2nd Review-Override Code(s) (separated w/comma or space)
+- Alias2 Appeal 2nd Review-Override Code(s) (separated w/comma or space)
+Appeal 2nd Review-Comment:
+- Alias1 Appeal 2nd Review-Comment
+- Alias2 Appeal 2nd Review-Comment
+Appeal 2nd Review-Pending Docs:
+- Alias1 Appeal 2nd Review-Pending Docs
+- Alias2 Appeal 2nd Review-Pending Docs
+Stage 325 Task Completed:
+- Alias1 Stage 325 Task Completed
+- Alias2 Stage 325 Task Completed
+Appraisal Funds Received 2nd Review:
+- Alias1 Appraisal Funds Received 2nd Review
+- Alias2 Appraisal Funds Received 2nd Review
+Stage 330 Task Completed:
+- Alias1 Stage 330 Task Completed
+- Alias2 Stage 330 Task Completed
+Hide Messages:
+- Alias1 Hide Messages
+- Alias2 Hide Messages
+'DBG: No Input Validation':
+- 'Alias1 DBG: No Input Validation'
+- 'Alias2 DBG: No Input Validation'
+Debug:
+- Alias1 Debug
+- Alias2 Debug
+'DBG: No Task Validation':
+- 'Alias1 DBG: No Task Validation'
+- 'Alias2 DBG: No Task Validation'
+'DBG: Flags':
+- 'Alias1 DBG: Flags'
+- 'Alias2 DBG: Flags'
+'DBG: NPV Flags':
+- 'Alias1 DBG: NPV Flags'
+- 'Alias2 DBG: NPV Flags'
+'DBG: Prevent Stage Change':
+- 'Alias1 DBG: Prevent Stage Change'
+- 'Alias2 DBG: Prevent Stage Change'
+Application Channel:
+- Alias1 Application Channel
+- Alias2 Application Channel
+Stage History Tracking:
+- Alias1 Stage History Tracking
+- Alias2 Stage History Tracking
+Has Appealed Indicator:
+- Alias1 Has Appealed Indicator
+- Alias2 Has Appealed Indicator
+Complete Package Received Date:
+- Alias1 Complete Package Received Date
+- Alias2 Complete Package Received Date
+Stage Alias:
+- Alias1 Stage Alias
+- Alias2 Stage Alias
+Status Code 4:
+- Alias1 Status Code 4
+- Alias2 Status Code 4
+Trial Period End Date:
+- Alias1 Trial Period End Date
+- Alias2 Trial Period End Date
+Has Entered 93 Once:
+- Alias1 Has Entered 93 Once
+- Alias2 Has Entered 93 Once
+Trial Start Date Override:
+- Alias1 Trial Start Date Override
+- Alias2 Trial Start Date Override

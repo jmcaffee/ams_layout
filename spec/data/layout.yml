@@ -1,0 +1,652 @@
+---
+BORROWER INFO:
+- :label: Borrower Name
+  :id: ctl00_ContentPlaceHolder1_txtBorrowerFirstName
+  :type: text
+- :label: Borrower SSN
+  :id: ctl00_ContentPlaceHolder1_ssnBorrowerSSN
+  :type: text
+- :label: Borrower Date of Birth
+  :id: ctl00_ContentPlaceHolder1_caBorrowerDOB
+  :type: text
+- :label: Income Type
+  :id: ctl00_ContentPlaceHolder1_ddlBorrowerCurrentEmployment
+  :type: select
+- :label: Borrower Current FICO
+  :id: ctl00_ContentPlaceHolder1_nuBorrowerCurrentFICO_txtCurrency
+  :type: text
+- :label: Bankruptcy Status
+  :id: ctl00_ContentPlaceHolder1_ddlBankruptcyStatus
+  :type: select
+CO-BORROWER INFO:
+- :label: Co-Borrower Name
+  :id: ctl00_ContentPlaceHolder1_txtCoBorrowerFirstName
+  :type: text
+- :label: Co-Borrower SSN
+  :id: ctl00_ContentPlaceHolder1_ssnCoBorrowerSSN
+  :type: text
+- :label: Co-Borrower Date of Birth
+  :id: ctl00_ContentPlaceHolder1_caCoBorrowerDOB
+  :type: text
+- :label: CoBorrower Income Type
+  :id: ctl00_ContentPlaceHolder1_ddlCoBorrowerCurrentEmployment
+  :type: select
+PROPERTY INFO:
+- :label: Property Address
+  :id: ctl00_ContentPlaceHolder1_txtPropertyStreetName
+  :type: text
+- :label: Property City
+  :id: ctl00_ContentPlaceHolder1_txtPropertyCity
+  :type: text
+- :label: Property State
+  :id: ctl00_ContentPlaceHolder1_ddlStateoftheSubjectProperty
+  :type: select
+- :label: Property Zip
+  :id: ctl00_ContentPlaceHolder1_zipPropertyZip_txtPostalCode
+  :type: text
+- :label: Number of Units
+  :id: ctl00_ContentPlaceHolder1_nuPropertyNumberofUnits_txtCurrency
+  :type: text
+- :label: Owner Occupied
+  :id: ctl00_ContentPlaceHolder1_ddlPropertyOccupancyStatusCode
+  :type: select
+- :label: Property Type
+  :id: ctl00_ContentPlaceHolder1_ddlPropertyType
+  :type: select
+- :label: Property Loss Status
+  :id: ctl00_ContentPlaceHolder1_txtPropertyLossStatus
+  :type: text
+- :label: BPO Property Valuation - Method
+  :id: ctl00_ContentPlaceHolder1_ddlPropertyValuationMethod
+  :type: select
+- :label: BPO Property Valuation - Date
+  :id: ctl00_ContentPlaceHolder1_caPropertyValuationDate
+  :type: text
+- :label: BPO Property Valuation - As-Is Value
+  :id: ctl00_ContentPlaceHolder1_cnPropertyValuationAsIsValue_txtCurrency
+  :type: text
+- :label: Property Condition
+  :id: ctl00_ContentPlaceHolder1_ddlPropertyCondition
+  :type: select
+- :label: Appraisal Property Valuation Method
+  :id: ctl00_ContentPlaceHolder1_ddlAppealPropertyValuationType
+  :type: select
+- :label: Appraisal Property Valuation Date
+  :id: ctl00_ContentPlaceHolder1_caAppealPropertyValuationDate
+  :type: text
+- :label: Appraisal Property Valuation As-Is Value
+  :id: ctl00_ContentPlaceHolder1_cnAppealPropertyValuationAsIs_txtCurrency
+  :type: text
+- :label: Appraisal Vendor Code
+  :id: ctl00_ContentPlaceHolder1_txtAppealVendorCode
+  :type: text
+HARDSHIP INFO:
+- :label: Hardship Reason
+  :id: ctl00_ContentPlaceHolder1_ddlReasonforDefault
+  :type: select
+- :label: Occupancy Status
+  :id: ctl00_ContentPlaceHolder1_ddlBorrowerIntent
+  :type: select
+- :label: Delinquent Counselor Code
+  :id: ctl00_ContentPlaceHolder1_txtDelinquentCounselorCode
+  :type: text
+- :label: Agency Type
+  :id: ctl00_ContentPlaceHolder1_txtAgencyType
+  :type: text
+- :label: FFIEC
+  :id: ctl00_ContentPlaceHolder1_chkFFIEC
+  :type: checkbox
+- :label: Pending Service Release
+  :id: ctl00_ContentPlaceHolder1_chkPendingServiceRelease
+  :type: checkbox
+- :label: Account in Litigation
+  :id: ctl00_ContentPlaceHolder1_ddlAccountLigitation
+  :type: select
+- :label: Bankruptcy Litigation
+  :id: ctl00_ContentPlaceHolder1_chkBankruptcyLitigation
+  :type: checkbox
+- :label: Delinquency Status
+  :id: ctl00_ContentPlaceHolder1_ddlDelinquencyStatus
+  :type: select
+DOCUMENTS:
+- :label: Borrower Commits to Sending Documents by Expiration Date
+  :id: ctl00_ContentPlaceHolder1_ddlBorrowerRequiredtoPayDownpayment
+  :type: select
+- :label: Income Verified
+  :id: ctl00_ContentPlaceHolder1_chkCompletedDocs
+  :type: checkbox
+- :label: Documents Received
+  :id: ctl00_ContentPlaceHolder1_ddlAllDocumentsReceived
+  :type: select
+- :label: Docs Received Date
+  :id: ctl00_ContentPlaceHolder1_caDocsReceivedDate
+  :type: text
+FORECLOSURE DETAILS:
+- :label: Foreclosure Status
+  :id: ctl00_ContentPlaceHolder1_ddlForeclosureStatus
+  :type: select
+- :label: Foreclosure Reinstatement Amount
+  :id: ctl00_ContentPlaceHolder1_cnReinstatementAmount_txtCurrency
+  :type: text
+- :label: Scheduled Foreclosure Sale Date
+  :id: ctl00_ContentPlaceHolder1_caForeclosureSaleScheduledDate
+  :type: text
+- :label: Anticipated Foreclosure Date
+  :id: ctl00_ContentPlaceHolder1_caProjectedForeclosureSaleDate
+  :type: text
+ESCROW INFO:
+- :label: Has Escrow Account
+  :id: ctl00_ContentPlaceHolder1_ddlHasEscrowAccount
+  :type: select
+- :label: Escrow Shortage for Advances
+  :id: ctl00_ContentPlaceHolder1_cnEscrowShortageforAdvances_txtCurrency
+  :type: text
+- :label: Current Escrow Balance
+  :id: ctl00_ContentPlaceHolder1_cnEscrowBalance_txtCurrency
+  :type: text
+- :label: Pending Escrow Change
+  :id: ctl00_ContentPlaceHolder1_chkNoOrLowIncome
+  :type: checkbox
+- :label: Association Dues/ Fees before modification
+  :id: ctl00_ContentPlaceHolder1_cnAssociationDuesFeesbeforemodification_txtCurrency
+  :type: text
+- :label: Escrow Complete
+  :id: ctl00_ContentPlaceHolder1_chkImminentDefaultFlag
+  :type: checkbox
+- :label: Optional Insurance
+  :id: ctl00_ContentPlaceHolder1_cnOptionalInsuranceAmount_txtCurrency
+  :type: text
+- :label: Capitalized Monthly Escrow Payment
+  :id: ctl00_ContentPlaceHolder1_cnEscrowPaymentCapitalized_txtCurrency
+  :type: text
+- :label: Monthly Partial Escrow Payment
+  :id: ctl00_ContentPlaceHolder1_cnEscrowPaymentPartial_txtCurrency
+  :type: text
+- :label: Non-Capitalized Monthly Escrow Payment
+  :id: ctl00_ContentPlaceHolder1_cnEscrowPaymentNotCapitalized_txtCurrency
+  :type: text
+- :label: Monthly Ancillary Fee Payment for Taxes and Insurance
+  :id: ctl00_ContentPlaceHolder1_cnAncillaryAmount_txtCurrency
+  :type: text
+CORPORATE ADVANCES:
+- :label: Corporate Advances for DQ Taxes
+  :id: ctl00_ContentPlaceHolder1_cnCorporateAdvancesforDQTaxes_txtCurrency
+  :type: text
+- :label: Corporate Advances for Forced Placed Insurance
+  :id: ctl00_ContentPlaceHolder1_cnCorporateAdvancesforForcedPlacedInsurance_txtCurrency
+  :type: text
+- :label: Corporate Advances Non Tax Non Insurance
+  :id: ctl00_ContentPlaceHolder1_cnCorporateAdvancesNonTaxNonInsurance_txtCurrency
+  :type: text
+- :label: Past Due Payments and Fees
+  :id: ctl00_ContentPlaceHolder1_cnPastDuePaymentsandFees_txtCurrency
+  :type: text
+- :label: Delinquent Taxes
+  :id: ctl00_ContentPlaceHolder1_cnUpcomingTaxAdvances_txtCurrency
+  :type: text
+- :label: Delinquent Insurance
+  :id: ctl00_ContentPlaceHolder1_cnDQFEES_txtCurrency
+  :type: text
+- :label: Servicing Advances
+  :id: ctl00_ContentPlaceHolder1_cnServicingAdvances_txtCurrency
+  :type: text
+MODIFICATION AGREEMENT:
+- :label: Mod Agreement Expiration Date
+  :id: ctl00_ContentPlaceHolder1_caModAgreementExpirationDate
+  :type: text
+- :label: Mod Agreement Received Date
+  :id: ctl00_ContentPlaceHolder1_caAgreementReceivedDate
+  :type: text
+- :label: Mod Agreement Validated
+  :id: ctl00_ContentPlaceHolder1_ddlModAgreementValidated
+  :type: select
+- :label: Resent Mod Agreement Expiration Date
+  :id: ctl00_ContentPlaceHolder1_caResentModAgreementExpirationDate
+  :type: text
+- :label: Resent Mod Agreement Received Date
+  :id: ctl00_ContentPlaceHolder1_caResentModAgreementReceivedDate
+  :type: text
+CUSTOMER WITHDRAWAL:
+- :label: Customer Requested Withdrawal
+  :id: ctl00_ContentPlaceHolder1_ddlHMDADenialReason
+  :type: select
+APPEALS & APPEAL DOCUMENTS:
+- :label: Appeal Reason
+  :id: ctl00_ContentPlaceHolder1_ddlAppealReason
+  :type: select
+- :label: Appeal Docs Expiration Date
+  :id: ctl00_ContentPlaceHolder1_caAppealDocsExpirationDate
+  :type: text
+- :label: Appeal Docs Received
+  :id: ctl00_ContentPlaceHolder1_ddlAppealDocsReceived
+  :type: select
+- :label: Appeal Docs Received Date
+  :id: ctl00_ContentPlaceHolder1_caAppealDocsReceivedDate
+  :type: text
+- :label: Appeal Expiration Date
+  :id: ctl00_ContentPlaceHolder1_caAppealValueDocsExpirationDate
+  :type: text
+OVERRIDE REQUEST (User):
+- :label: Reconsideration Reason
+  :id: ctl00_ContentPlaceHolder1_ddlReconsiderationReason
+  :type: select
+- :label: Reconsideration/Decline Comments
+  :id: ctl00_ContentPlaceHolder1_txtTextArea2
+  :type: textarea
+OVERRIDES (Managment):
+- :label: Counter Type
+  :id: ctl00_ContentPlaceHolder1_ddlCounterType
+  :type: select
+MANAGER BY-PASS EXCEPTIONS:
+- :label: Approval
+  :id: ctl00_ContentPlaceHolder1_chkApproval
+  :type: checkbox
+- :label: Manual Decline
+  :id: ctl00_ContentPlaceHolder1_chkDeclineApproval
+  :type: checkbox
+- :label: Adverse Action Code(s) (separated w/comma or space)
+  :id: ctl00_ContentPlaceHolder1_txtDenialReasonCounterOffer
+  :type: text
+- :label: Manual Decline Reason Codes (separated w/comma or space)
+  :id: ctl00_ContentPlaceHolder1_txtDeclineCode
+  :type: text
+- :label: Manager By-Pass Reason
+  :id: ctl00_ContentPlaceHolder1_txtTextArea1
+  :type: textarea
+- :label: Manual Decline Comments
+  :id: ctl00_ContentPlaceHolder1_txtTextArea301
+  :type: textarea
+RATE/TERM EXCEPTION:
+- :label: Rate Term Exception Reason
+  :id: ctl00_ContentPlaceHolder1_ddlRateTermExceptionReason
+  :type: select
+- :label: Exception Mod Rate
+  :id: ctl00_ContentPlaceHolder1_cnInterestRateAfterModification_txtCurrency
+  :type: text
+- :label: Exception Mod Term
+  :id: ctl00_ContentPlaceHolder1_nuCSPAmortizationTermAfterModification_txtCurrency
+  :type: text
+DOCUMENT EXCEPTIONS:
+- :label: Document Exception Reason
+  :id: ctl00_ContentPlaceHolder1_ddlDocumentExceptionReason
+  :type: select
+- :label: Exception Document Expiration Date
+  :id: ctl00_ContentPlaceHolder1_caDocumentExpirationDate
+  :type: text
+LOAN INFO:
+- :label: Lien Position
+  :id: ctl00_ContentPlaceHolder1_ddlFirstLienIndicator
+  :type: select
+- :label: Platform
+  :id: ctl00_ContentPlaceHolder1_txtServicingSystem
+  :type: text
+- :label: Investor Code
+  :id: ctl00_ContentPlaceHolder1_txtInvestorCode
+  :type: text
+- :label: Product Type
+  :id: ctl00_ContentPlaceHolder1_ddlMortgageType
+  :type: select
+- :label: Prepay Flag
+  :id: ctl00_ContentPlaceHolder1_chkPrepayFlag
+  :type: checkbox
+- :label: Due Day
+  :id: ctl00_ContentPlaceHolder1_nuCurrentPaymentDueDay_txtCurrency
+  :type: text
+- :label: IO Indicator
+  :id: ctl00_ContentPlaceHolder1_chkIOIndicator
+  :type: checkbox
+- :label: GSE Loan Number
+  :id: ctl00_ContentPlaceHolder1_txtGSELoanNumber
+  :type: text
+- :label: PMI Insurance
+  :id: ctl00_ContentPlaceHolder1_chkPMIInsurance
+  :type: checkbox
+- :label: Original Amortization
+  :id: ctl00_ContentPlaceHolder1_ddlProductbeforeModification
+  :type: select
+- :label: Current Unpaid Balance
+  :id: ctl00_ContentPlaceHolder1_cnCurrentUnpaidBalance_txtCurrency
+  :type: text
+- :label: DQ PI Payment
+  :id: ctl00_ContentPlaceHolder1_cnDQPIPayment_txtCurrency
+  :type: text
+- :label: Current Interest Rate
+  :id: ctl00_ContentPlaceHolder1_cnCurrentInterestRate_txtCurrency
+  :type: text
+- :label: Current Monthly Payment
+  :id: ctl00_ContentPlaceHolder1_cnCurrentMonthlyPayment_txtCurrency
+  :type: text
+- :label: Current Principal Payment
+  :id: ctl00_ContentPlaceHolder1_cnCurrentPrincipalPayment_txtCurrency
+  :type: text
+- :label: Current Interest Payment
+  :id: ctl00_ContentPlaceHolder1_cnCurrentIOPayment_txtCurrency
+  :type: text
+- :label: Principal Forbearance Amount
+  :id: ctl00_ContentPlaceHolder1_cnPrincipalForbearanceAmount_txtCurrency
+  :type: text
+- :label: Deferred Interest
+  :id: ctl00_ContentPlaceHolder1_cnPreviousModificationDeferredInterest_txtCurrency
+  :type: text
+- :label: HELOC Loan Alert
+  :id: ctl00_ContentPlaceHolder1_txtCreditType
+  :type: text
+- :label: Monthly Escrow Amount
+  :id: ctl00_ContentPlaceHolder1_cnMonthlyEscrowPayment_txtCurrency
+  :type: text
+- :label: Remaining Original Term
+  :id: ctl00_ContentPlaceHolder1_nuRemainingOriginalTerm_txtCurrency
+  :type: text
+- :label: Suspense Amount
+  :id: ctl00_ContentPlaceHolder1_cnSuspenseAmount_txtCurrency
+  :type: text
+- :label: Payright Rewards Flag
+  :id: ctl00_ContentPlaceHolder1_chkPayrightRewardsFlag
+  :type: checkbox
+- :label: Pure Interest Rate
+  :id: ctl00_ContentPlaceHolder1_cnContractualInterestRate_txtCurrency
+  :type: text
+- :label: Is Personal Home Loan
+  :id: ctl00_ContentPlaceHolder1_chkIsPersonalHomeLoan
+  :type: checkbox
+- :label: Pure PI Payment
+  :id: ctl00_ContentPlaceHolder1_cnContractualPIPayment_txtCurrency
+  :type: text
+- :label: Is Principal Write Down
+  :id: ctl00_ContentPlaceHolder1_chkIsPrincipalWriteDown
+  :type: checkbox
+- :label: Close Code
+  :id: ctl00_ContentPlaceHolder1_ddlInternalStatusCode
+  :type: select
+ORIGINAL LOAN TERMS:
+- :label: Origination Date
+  :id: ctl00_ContentPlaceHolder1_caNoteDate
+  :type: text
+- :label: Current Maturity Date
+  :id: ctl00_ContentPlaceHolder1_caMaturityDate
+  :type: text
+- :label: Original Property Value
+  :id: ctl00_ContentPlaceHolder1_cnOriginationPropertyValue_txtCurrency
+  :type: text
+- :label: Original Loan Term
+  :id: ctl00_ContentPlaceHolder1_nuTermMonths_txtCurrency
+  :type: text
+- :label: Original LTV
+  :id: ctl00_ContentPlaceHolder1_cnLTVAtOrigination_txtCurrency
+  :type: text
+- :label: Origination Front-End DTI
+  :id: ctl00_ContentPlaceHolder1_cnOriginationFrontEndRatio_txtCurrency
+  :type: text
+- :label: Investment Property At Origination
+  :id: ctl00_ContentPlaceHolder1_chkInvestmentPropertyAtOrigination
+  :type: checkbox
+- :label: Gross Disposable Income at Origination
+  :id: ctl00_ContentPlaceHolder1_cnGrossDisposableIncomeatOrigination_txtCurrency
+  :type: text
+ARM / BALLOON INFO:
+- :label: First ARM Reset Date
+  :id: ctl00_ContentPlaceHolder1_caFirstRateResetDate
+  :type: text
+- :label: Current Next Rate Reset Date
+  :id: ctl00_ContentPlaceHolder1_caCurrentNextRateResetDate
+  :type: text
+- :label: Min ARM Adjustment
+  :id: ctl00_ContentPlaceHolder1_cnMinARMAdjustment_txtCurrency
+  :type: text
+- :label: Max ARM Adjustment
+  :id: ctl00_ContentPlaceHolder1_cnMaxARMAdjustment_txtCurrency
+  :type: text
+- :label: ARM Floor
+  :id: ctl00_ContentPlaceHolder1_cnARMFloor_txtCurrency
+  :type: text
+- :label: ARM Ceiling
+  :id: ctl00_ContentPlaceHolder1_cnARMCeiling_txtCurrency
+  :type: text
+- :label: Balloon Payment Due Date
+  :id: ctl00_ContentPlaceHolder1_caBalloonPaymentDueDate
+  :type: text
+- :label: Note Reset Rate
+  :id: ctl00_ContentPlaceHolder1_cnNoteResetRate_txtCurrency
+  :type: text
+FAP II PREVIOUS TRIALS:
+- :label: Failed Trial Counter-Payments
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory1FailedTrialPmtsCount_txtCurrency
+  :type: text
+- :label: Failed Trial Counter-Mod Agreement Not Recd
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory1FailedTrialDocNotSentCount_txtCurrency
+  :type: text
+FAP II PREVIOUS MODS:
+- :label: Number of FAP II Mods Activated
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory1ActivatedCount_txtCurrency
+  :type: text
+- :label: FAP II Previous 6 Payment Mod
+  :id: ctl00_ContentPlaceHolder1_caPreviousModCategory2ActivatedDate
+  :type: text
+- :label: Previous FAP II Mod Failed Count
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory1FailedCount_txtCurrency
+  :type: text
+- :label: Previous Foreclosure Mod Approval Date
+  :id: ctl00_ContentPlaceHolder1_caCategory1ModApprovalDate
+  :type: text
+- :label: Total FIM Restructures Previous 60 Months
+  :id: ctl00_ContentPlaceHolder1_nuModsLast60MonthsCount_txtCurrency
+  :type: text
+- :label: Mod Count
+  :id: ctl00_ContentPlaceHolder1_nuModsCount_txtCurrency
+  :type: text
+- :label: FIM Modifications
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory2ModificationCount_txtCurrency
+  :type: text
+- :label: Date of last FIM Modification
+  :id: ctl00_ContentPlaceHolder1_caDateofLastMod
+  :type: text
+- :label: FIM Re-ages
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory2CollectionReageCount_txtCurrency
+  :type: text
+- :label: Date of last FIM Re-age
+  :id: ctl00_ContentPlaceHolder1_caDateofLastRestructure
+  :type: text
+- :label: MN Re-ages
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory2ModificationReageCount_txtCurrency
+  :type: text
+- :label: Currently on Active Mod
+  :id: ctl00_ContentPlaceHolder1_chkCurrentlyonActiveMod
+  :type: checkbox
+- :label: Previous FAP II Mod Forbearance Amount
+  :id: ctl00_ContentPlaceHolder1_cnPreviousModificationForbearanceAmount_txtCurrency
+  :type: text
+- :label: Current Modification Term
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory2Term_txtCurrency
+  :type: text
+- :label: Previous FAP II Mod Term
+  :id: ctl00_ContentPlaceHolder1_nuPreviousModCategory1Term_txtCurrency
+  :type: text
+- :label: Previous FAP II Mod Payment
+  :id: ctl00_ContentPlaceHolder1_cnPreviousModCategory1Payment_txtCurrency
+  :type: text
+- :label: Previous FAP II Mod Interest Rate
+  :id: ctl00_ContentPlaceHolder1_cnPreviousModCategory1InterestRate_txtCurrency
+  :type: text
+- :label: Previous FAP II Mod Total Income
+  :id: ctl00_ContentPlaceHolder1_cnPreviousModCategory1TotalIncome_txtCurrency
+  :type: text
+- :label: Previous FAP II Mod DTI
+  :id: ctl00_ContentPlaceHolder1_cnPreviousModDTI_txtCurrency
+  :type: text
+- :label: Previous FAP II Mod Disposable Income
+  :id: ctl00_ContentPlaceHolder1_cnPreviousModCategory1DisposableIncome_txtCurrency
+  :type: text
+PWD Testing:
+- :label: PCO Value
+  :id: ctl00_ContentPlaceHolder1_cnPCOValue_txtCurrency
+  :type: text
+- :label: CIT 314 Flag
+  :id: ctl00_ContentPlaceHolder1_txtStatusCode1
+  :type: text
+- :label: Vendor Code
+  :id: ctl00_ContentPlaceHolder1_txtVendorCode
+  :type: text
+- :label: CIT 690 Flag
+  :id: ctl00_ContentPlaceHolder1_txtStatusCode2
+  :type: text
+- :label: Interest Method Type
+  :id: ctl00_ContentPlaceHolder1_txtInterestMethodType
+  :type: text
+- :label: Pool ID
+  :id: ctl00_ContentPlaceHolder1_nuPoolID_txtCurrency
+  :type: text
+- :label: Securitized Indicator
+  :id: ctl00_ContentPlaceHolder1_chkOriginalLoanStandardSecurityInstrument
+  :type: checkbox
+"--- Stage 105-2ndReview-Hard Decline":
+- :label: Second Review-Approval
+  :id: ctl00_ContentPlaceHolder1_chkReviewApproval
+  :type: checkbox
+- :label: Second Review-Decline
+  :id: ctl00_ContentPlaceHolder1_chkReviewDecline
+  :type: checkbox
+- :label: Second Review Override Code(s) (separated w/comma or space)
+  :id: ctl00_ContentPlaceHolder1_txtReviewOverrideCode
+  :type: text
+- :label: Second Review-Comment
+  :id: ctl00_ContentPlaceHolder1_txtReviewComment
+  :type: textarea
+"--- Stage 120-2ndReview-PendingDocs":
+- :label: Second Review-Pending Docs
+  :id: ctl00_ContentPlaceHolder1_ddlReviewDocsStatus
+  :type: select
+- :label: Manual Decline Validation
+  :id: ctl00_ContentPlaceHolder1_ddlHardshipSeverity
+  :type: select
+"--- Stage 145-2ndReview-Pending Mod":
+- :label: Second Review-Pending Mod
+  :id: ctl00_ContentPlaceHolder1_ddlReviewModDocsStatus
+  :type: select
+- :label: Second Review-Mod Agreement Received Date
+  :id: ctl00_ContentPlaceHolder1_caReviewModDocsReceivedDate
+  :type: text
+"--- Stage 205-Appeal Hard Decline":
+- :label: Appeal Hard Decline-Review Completed
+  :id: ctl00_ContentPlaceHolder1_chkAppealReviewCompleted1
+  :type: checkbox
+"--- Stage 210-Appeal Customer Input":
+- :label: Appeal Customer Input-Review Completed
+  :id: ctl00_ContentPlaceHolder1_chkAppealReviewCompleted2
+  :type: checkbox
+"--- Stage 222-Appeal Docs Verification":
+- :label: Appeal Decision Expiration Date
+  :id: ctl00_ContentPlaceHolder1_caAppealDecisionExpirationDate
+  :type: text
+"--- Stage 225-Appeal UW Review":
+- :label: Appeal UW Review And Prescreen
+  :id: ctl00_ContentPlaceHolder1_ddlAppealReviewStatus
+  :type: select
+- :label: Borrower Sending Docs
+  :id: ctl00_ContentPlaceHolder1_ddlAppealSendingDocs
+  :type: select
+- :label: Appeal Income Verified
+  :id: ctl00_ContentPlaceHolder1_chkAppealDocsCompleted
+  :type: checkbox
+"--- Stage 226-Appeal Preliminary NPV":
+- :label: Borrower Stated Property Value
+  :id: ctl00_ContentPlaceHolder1_cnAppealStatedPropertyValue_txtCurrency
+  :type: text
+- :label: Appeal Appraisal Required
+  :id: ctl00_ContentPlaceHolder1_chkHAMPEligible
+  :type: checkbox
+"--- Stage 227-Appeal Funds Received":
+- :label: Appraisal Funds Expiration Date
+  :id: ctl00_ContentPlaceHolder1_caBPOValuationDate
+  :type: text
+- :label: Stage 227 Task Completed
+  :id: ctl00_ContentPlaceHolder1_chkTitleDelayorIssue
+  :type: checkbox
+"--- Stage 228-Pending Appraisal":
+- :label: Stage 228 Entry Date
+  :id: ctl00_ContentPlaceHolder1_caBorrowerExecutionDate
+  :type: text
+- :label: CIT 73 Flag
+  :id: ctl00_ContentPlaceHolder1_txtStatusCode3
+  :type: text
+"--- Stage 230-Trial Decision":
+- :label: Income 1
+  :id: ctl00_ContentPlaceHolder1_cnCurrentMonthlyRent_txtCurrency
+  :type: text
+"--- Stage 305-App 2nd Rvw-Hard Decline":
+- :label: Appeal 2nd Review-Approval
+  :id: ctl00_ContentPlaceHolder1_chkAppealReviewApproval
+  :type: checkbox
+- :label: Appeal 2nd Review-Decline
+  :id: ctl00_ContentPlaceHolder1_chkAppealReviewDecline
+  :type: checkbox
+- :label: Appeal 2nd Review-Override Code(s) (separated w/comma or space)
+  :id: ctl00_ContentPlaceHolder1_txtAppealReviewOverrideCode
+  :type: text
+- :label: Appeal 2nd Review-Comment
+  :id: ctl00_ContentPlaceHolder1_txtAppealReviewComment
+  :type: textarea
+"--- Stage 320-App 2nd Rvw-Pending Docs":
+- :label: Appeal 2nd Review-Pending Docs
+  :id: ctl00_ContentPlaceHolder1_ddlAppealReviewDocsStatus
+  :type: select
+"--- Stage 325-App 2nd Rvw-UW Review":
+- :label: Stage 325 Task Completed
+  :id: ctl00_ContentPlaceHolder1_chkCurrentlyInLoanMod
+  :type: checkbox
+"--- Stage 327-App 2nd Rvw IA Funds":
+- :label: Appraisal Funds Received 2nd Review
+  :id: ctl00_ContentPlaceHolder1_ddlAppealFundsReceived
+  :type: select
+"--- Stage 330-App 2nd Rvw-Trial Period":
+- :label: Stage 330 Task Completed
+  :id: ctl00_ContentPlaceHolder1_chkFNMAHomeSaverNote
+  :type: checkbox
+DEV INPUTS - Test Use Only:
+- :label: Hide Messages
+  :id: ctl00_ContentPlaceHolder1_chkHideMessages
+  :type: checkbox
+- :label: 'DBG: No Input Validation'
+  :id: ctl00_ContentPlaceHolder1_chkUDFUseValidationScripting1000018
+  :type: checkbox
+- :label: Debug
+  :id: ctl00_ContentPlaceHolder1_chkUDFDebugCheck11000023
+  :type: checkbox
+- :label: 'DBG: No Task Validation'
+  :id: ctl00_ContentPlaceHolder1_chkUDFDebugCheck21000023
+  :type: checkbox
+- :label: 'DBG: Flags'
+  :id: ctl00_ContentPlaceHolder1_txtUDFDebugText11000023
+  :type: text
+- :label: 'DBG: NPV Flags'
+  :id: ctl00_ContentPlaceHolder1_txtUDFDebugText21000023
+  :type: text
+- :label: 'DBG: Prevent Stage Change'
+  :id: ctl00_ContentPlaceHolder1_chkUDFDebugCheck31000023
+  :type: checkbox
+- :label: Application Channel
+  :id: ctl00_ContentPlaceHolder1_txtChannel
+  :type: text
+- :label: Stage History Tracking
+  :id: ctl00_ContentPlaceHolder1_txtTextArea401
+  :type: textarea
+- :label: Has Appealed Indicator
+  :id: ctl00_ContentPlaceHolder1_chkLegalDelayorIssue
+  :type: checkbox
+- :label: Complete Package Received Date
+  :id: ctl00_ContentPlaceHolder1_caCompletePackageReceivedDate
+  :type: text
+- :label: Stage Alias
+  :id: ctl00_ContentPlaceHolder1_txtStageAlias
+  :type: text
+- :label: Status Code 4
+  :id: ctl00_ContentPlaceHolder1_txtStatusCode4
+  :type: text
+- :label: Trial Period End Date
+  :id: ctl00_ContentPlaceHolder1_caIncomeDocReceivedDate
+  :type: text
+- :label: Has Entered 93 Once
+  :id: ctl00_ContentPlaceHolder1_chkPriorLoanMod
+  :type: checkbox
+- :label: Trial Start Date Override
+  :id: ctl00_ContentPlaceHolder1_caDatePropertyListed
+  :type: text

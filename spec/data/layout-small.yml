@@ -1,0 +1,25 @@
+---
+BORROWER INFO:
+- :label: Borrower Name
+  :id: ctl00_ContentPlaceHolder1_txtBorrowerFirstName
+  :type: text
+- :label: Borrower SSN
+  :id: ctl00_ContentPlaceHolder1_ssnBorrowerSSN
+  :type: text
+- :label: Income Type
+  :id: ctl00_ContentPlaceHolder1_ddlBorrowerCurrentEmployment
+  :type: select
+ESCROW INFO:
+- :label: Has Escrow Account
+  :id: ctl00_ContentPlaceHolder1_ddlHasEscrowAccount
+  :type: select
+- :label: Pending Escrow Change
+  :id: ctl00_ContentPlaceHolder1_chkNoOrLowIncome
+  :type: checkbox
+MANAGER BY-PASS EXCEPTIONS:
+- :label: Adverse Action Code(s) (separated w/comma or space)
+  :id: ctl00_ContentPlaceHolder1_txtDenialReasonCounterOffer
+  :type: text
+- :label: Manual Decline Comments
+  :id: ctl00_ContentPlaceHolder1_txtTextArea301
+  :type: textarea

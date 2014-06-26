@@ -1,0 +1,22 @@
+---
+Borrower Name:
+- Alias1 Borrower Name
+- Alias2 Borrower Name
+Borrower SSN:
+- Alias1 Borrower SSN
+- Alias2 Borrower SSN
+Income Type:
+- Alias1 Income Type
+- Alias2 Income Type
+Has Escrow Account:
+- Alias1 Has Escrow Account
+- Alias2 Has Escrow Account
+Pending Escrow Change:
+- Alias1 Pending Escrow Change
+- Alias2 Pending Escrow Change
+Adverse Action Code(s) (separated w/comma or space):
+- Alias1 Adverse Action Code(s) (separated w/comma or space)
+- Alias2 Adverse Action Code(s) (separated w/comma or space)
+Manual Decline Comments:
+- Alias1 Manual Decline Comments
+- Alias2 Manual Decline Comments
