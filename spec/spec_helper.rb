@@ -1,8 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'ams_layout'
 
-def cli
-  $cli ||= AmsLayout::CLI.new
+def client
+  $client ||= AmsLayout::Client.new
 end
 
 def spec_tmp_dir

@@ -25,7 +25,7 @@ task :console do
 
   Helper Methods:
 
-    cli                      - returns the AmsLayout::CLI object
+    client                   - returns the AmsLayout::client object
     login username, password - login to portal
     get_layout               - log in and return field layout
     write_layout filename    - write a layout file to disk in YAML format
@@ -38,27 +38,27 @@ task :console do
 CONSOLE_HELP
   end
 
-  def cli
-    @cli ||= AmsLayout::CLI.new
-    @cli
+  def client
+    @client ||= AmsLayout::Client.new
+    @client
   end
 
   def login username, password
-    cli.login username, password
+    client.login username, password
   end
 
   def logout
-    cli.logout
+    client.logout
   end
 
   def get_layout
-    cli.login 'test', '***REMOVED***'
-    cli.get_field_data
+    client.login 'test', '***REMOVED***'
+    client.get_field_data
   end
 
   def write_layout filename, write_alias_example = false
-    cli.login 'test', '***REMOVED***'
-    cli.write_layout filename, write_alias_example
+    client.login 'test', '***REMOVED***'
+    client.write_layout filename, write_alias_example
   end
 
   def write_bundle output_dir
@@ -71,17 +71,17 @@ CONSOLE_HELP
     write_alias_examples = true
 
     write_layout layout_file, write_alias_examples
-    cli.write_layout_class layout_class, layout_file
-    cli.write_delegate_class layout_delegate, layout_file
-    cli.quit
+    client.write_layout_class layout_class, layout_file
+    client.write_delegate_class layout_delegate, layout_file
+    client.quit
   end
 
   def write_layout_class filename, layout_file
-    cli.write_layout_class filename, layout_file
+    client.write_layout_class filename, layout_file
   end
 
   def write_delegate_class filename, layout_file
-    cli.write_delegate_class filename, layout_file
+    client.write_delegate_class filename, layout_file
   end
 
   #def add_credentials env, username, pwd
@@ -92,7 +92,7 @@ CONSOLE_HELP
 
   #def activate_env env, username, pwd
   #  add_credentials env, username, pwd
-  #  cli.environment = env.to_sym
+  #  client.environment = env.to_sym
   #end
 
   require_relative 'lib/ams_layout'

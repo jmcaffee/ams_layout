@@ -82,7 +82,7 @@ AmsLayout.configure
 
 require "ams_layout/version"
 require "ams_layout/browser_loader"
-require 'ams_layout/cli'
+require 'ams_layout/client'
 require "ams_layout/parser"
 require "ams_layout/writer"
 require "ams_layout/delegate_writer"
