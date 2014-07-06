@@ -49,7 +49,7 @@ describe AmsLayout::DelegateWriter do
     end
 
     expect(target_file.exist?).to eq true
-    expect(assert_file_contains(target_file,'text_field(:alias1_borrower_name'))
+    expect(assert_file_contains(target_file,'def alias1_borrower_name=(value)'))
   end
 
   context '#aliases=' do
