@@ -10,9 +10,35 @@
 require 'rubygems'
 require 'bundler/setup'
 
+# Re-open String class and add snakecase method.
+class String
+  def snakecase
+    # Strip the following characters out: /, (, ), #, &
+    # Replace :: with /
+    # Separate CamelCased text with _
+    # Replace space with _
+    # Replace - with _
+    # Replace multiple _ with one _
+    self.gsub("/", '').
+    gsub("(",'').
+    gsub(")",'').
+    gsub("#",'').
+    gsub("&",'').
+    gsub(/::/, '/').
+    gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+    gsub(/([a-z\d])([A-Z])/,'\1_\2').
+    gsub(" ",'_').
+    tr("-", "_").
+    gsub(/(_)+/,'_').
+    downcase
+  end
+end
+
+
 module AmsLayout
   class << self
     attr_accessor :configuration
+    attr_accessor :client
   end
 
   def self.configure
@@ -20,12 +46,17 @@ module AmsLayout
     yield(configuration) if block_given?
   end
 
+
   class Configuration
     attr_accessor :default_environment
     attr_accessor :credentials
     attr_accessor :base_urls
     attr_accessor :aliases
     attr_accessor :page_urls
+
+    # Default generated class names
+    attr_accessor :layout_class_name
+    attr_accessor :delegate_class_name
 
     # Browser timeout in seconds. Default: 360 (6 mins).
     attr_accessor :browser_timeout
@@ -52,6 +83,9 @@ module AmsLayout
       @page_urls   = { 'PrequalDetail'           => "/SubmitLoan/PrequalDetail.aspx",
                     }
 
+      @layout_class_name = 'LoanEntryFields'
+      @delegate_class_name = 'DelegateLoanEntryFields'
+
       @browser_timeout = 360
     end
 
@@ -75,7 +109,35 @@ module AmsLayout
     parser.parse html
     File.write(filename, YAML.dump(parser.layout))
   end
-end
+
+  class Runner
+    def initialize(argv, client = AmsLayout::Client.new, exit_code = true)
+      @argv = argv
+      AmsLayout.client = client
+      @exit_code = exit_code
+    end
+
+    def execute!
+      exit_code = begin
+
+        # Run the thor app
+        AmsLayout::CLI.start(@argv)
+
+        # Thor::Base#start does not have a return value,
+        # assume success if no exception is thrown.
+        0
+      rescue StandardError => e
+        b = e.backtrace
+        b.unshift("#{b.shift}: #{e.message} (#{e.class})")
+        puts(b.map { |s| "\tfrom #{s}"}.join("\n"))
+        1
+      end
+
+      # Return the exit code
+      exit(exit_code) if @exit_code
+    end
+  end # Runner
+end # AmsLayout
 
 # Call configure to force creation of the configuration object.
 AmsLayout.configure
@@ -86,4 +148,5 @@ require 'ams_layout/client'
 require "ams_layout/parser"
 require "ams_layout/writer"
 require "ams_layout/delegate_writer"
+require "ams_layout/cli"
 
