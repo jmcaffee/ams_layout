@@ -7,153 +7,132 @@
 # Website::   http://ktechsystems.com
 ##############################################################################
 
-require 'ams_layout/pages'
+require 'thor'
+require 'ams_layout/client'
 
 module AmsLayout
-  class CLI
-    include AmsLayout::Pages
+  class CLI < Thor
 
-
-    def initialize
-      # Make sure the configuration has been initialized.
-      AmsLayout.configure
+    def self.start(*)
+      super
+    rescue Exception => e
+      raise e
     end
 
-    ##
-    # Set the current environment
+    class Generate < Thor
 
-    def environment=(env)
-      raise "Unknown environment [#{env}]" unless AmsLayout.configuration.credentials.key?(env)
-      @env = env
-      AmsLayout.configure do |config|
-        config.default_environment = env
+      desc "layout [PATH]", "write layout data to a file"
+      long_desc <<-LD
+        Generate layout data file.
+
+        File will be named layout.yml and placed in the directory (PATH)
+        you specify.
+
+        Directory must already exist or an error will be thrown.
+      LD
+      def layout(path)
+        client.login('user', 'pass')
+        client.write_layout path, false
+        client.logout
+      end
+
+      desc "cls <opts> [PATH] [LAYOUT_PATH]", "write layout class to a file"
+      long_desc <<-LD
+        Generate layout class.
+
+        Options:
+
+          -n ClassName specify name of layout class (default: LoanEntryFields)
+
+        Arguments:
+
+        [PATH] Path to directory where layout class will be created.
+
+        [LAYOUT_PATH] Path to directory containing layout data (layout.yml)
+
+        Directories must already exist or an error will be thrown.
+      LD
+      option :name, :banner => "ClassName", :aliases => :n
+      def cls(path, layout_path)
+        if options[:name]
+          client.layout_class_name = options[:name]
+        end
+
+        client.write_layout_class path, layout_path
+      end
+
+      desc "delegate <opts> [PATH] [LAYOUT_PATH]", "write delegate class to a file"
+      long_desc <<-LD
+        Generate delegate class.
+
+        Options:
+
+          -d ClassName specify name of delegate class (default: DelegateLoanEntryFields)
+
+        Arguments:
+
+        [PATH] Path to directory where delegate class will be created.
+
+        [LAYOUT_PATH] Path to directory containing layout data (layout.yml)
+
+        Directories must already exist or an error will be thrown.
+      LD
+      option :delegate, :banner => "DelegateClassName", :aliases => :d
+      def delegate(path, layout_path)
+        if options[:delegate]
+          client.delegate_class_name = options[:delegate]
+        end
+
+        client.write_delegate_class path, layout_path
+      end
+
+      desc "all <opts> [PATH]", "write layout data, layout class, and delegate class files to a path"
+      long_desc <<-LD
+        Generate layout data file (layout.yml), layout class, and delegate layout class.
+
+        Options:
+
+          -n ClassName specify name of layout class (default: LoanEntryFields)
+
+          -d ClassName specify name of delegate class (default: DelegateLoanEntryFields)
+
+        Arguments:
+
+        [PATH] Path to directory where files will be created.
+
+        Directory must already exist or an error will be thrown.
+      LD
+      option :name, :banner => "ClassName", :aliases => :n
+      option :delegate, :banner => "DelegateClassName", :aliases => :d
+      def all(path)
+        # Generate layout file
+        client.login('user', 'pass')
+        client.write_layout path, false
+        client.logout
+
+        # Generate layout class
+        if options[:name]
+          client.layout_class_name = options[:name]
+        end
+
+        client.write_layout_class path, path
+
+        # Generate delegate class
+        if options[:delegate]
+          client.delegate_class_name = options[:delegate]
+        end
+
+        client.write_delegate_class path, path
+      end
+
+    private
+
+      def client
+        AmsLayout.client
       end
     end
 
-    ##
-    # Return the current environment
-
-    def environment
-      @env ||= AmsLayout.configuration.default_environment
-      @env
-    end
-
-    ##
-    # Return the credentials for the current environment
-
-    def credentials
-      return AmsLayout.configuration.credentials[environment]
-    end
-
-    ##
-    # Return the base url for the current environment
-
-    def base_url
-      return AmsLayout.configuration.base_urls[environment]
-    end
-
-    ##
-    # Login to the Admin Module
-    #
-    # If we're already logged in, do nothing unless the +force+ flag is true.
-    #
-    # +force+ force a re-login if we've already logged in
-
-    def login(username, password, options = {})
-      force = options.fetch(:force) { false }
-
-      logout
-      login_page(force).login_as username, password
-    end
-
-    def logout
-      login_page.logout
-      @login_page = nil
-    end
-
-    ##
-    # Close the browser
-
-    def quit
-      unless @browser.nil?
-        logout
-        @browser.close
-        @browser = nil
-      end
-    end
-
-    ##
-    # Retrieve field data from Loan Entry (Prequal) screen
-
-    def get_field_data
-      prequal = PrequalDetail.new(browser, true)
-      parser = Parser.new
-      parser.parse prequal.html
-      parser.layout
-    end
-
-    def write_layout filename, write_alias_example = false
-      layout = get_field_data
-      File.write filename, YAML.dump(layout)
-
-      write_alias_example filename if write_alias_example
-    end
-
-    def write_alias_example layout_filename
-      layout = YAML::load_file(layout_filename)
-      aliases = {}
-
-      layout.each do |section_label, fields|
-        fields.each do |fld|
-          label = fld[:label]
-          aliases[label] = [
-            "Alias1 #{label}",
-            "Alias2 #{label}"
-          ]
-        end # fields
-      end # layout
-
-      File.write "#{layout_filename}.aliases.example", YAML.dump(aliases)
-    end
-
-    def write_layout_class filename, layout_filename
-      assert_file_exists layout_filename
-
-      layout = YAML::load_file(layout_filename)
-      aliases = YAML::load_file("#{layout_filename}.aliases") if File.exist?("#{layout_filename}.aliases")
-      writer = Writer.new
-      writer.aliases = aliases unless aliases.nil?
-
-      File.open(filename, 'w') do |f|
-        writer.write f, layout
-      end
-    end
-
-    def write_delegate_class filename, layout_filename
-      assert_file_exists layout_filename
-
-      layout = YAML::load_file(layout_filename)
-      aliases = YAML::load_file("#{layout_filename}.aliases") if File.exist?("#{layout_filename}.aliases")
-      writer = DelegateWriter.new
-      writer.aliases = aliases unless aliases.nil?
-
-      File.open(filename, 'w') do |f|
-        writer.write f, layout
-      end
-    end
-
-  private
-
-    def login_page force = false
-      if force || @login_page.nil?
-        @login_page = LoginPage.new(browser, true)
-      end
-
-      @login_page
-    end
-
-    def assert_file_exists filename
-      fail "#{filename} does not exist" unless File.exist?(filename)
-    end
+    desc "generate [COMMAND]", "generate one or more files"
+    subcommand "generate", Generate
   end # CLI
 end # AmsLayout
