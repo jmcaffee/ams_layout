@@ -48,7 +48,29 @@ describe AmsLayout::Client do
 
     target_file = target_dir.join 'loan_entry_fields.rb'
 
-    expect{ client.write_layout_class(target_file, layout_file) }.not_to raise_exception
+    expect{ client.write_layout_class(target_dir, layout_file) }.not_to raise_exception
     expect(target_file.exist?).to eq true
+  end
+
+  it '#write_delegate_class' do
+    layout_file = copy_from_spec_data 'layout-small.yml', 'layout1.yml'
+    copy_from_spec_data 'layout-small.yml.aliases', 'layout1.yml.aliases'
+
+    target_file = target_dir.join 'delegate_loan_entry_fields.rb'
+
+    expect{ client.write_delegate_class(target_dir, layout_file) }.not_to raise_exception
+    expect(target_file.exist?).to eq true
+  end
+
+  context "#layout_class_name" do
+    it 'defaults to LoanEntryFields' do
+      expect( client.layout_class_name ).to eq 'LoanEntryFields'
+    end
+  end
+
+  context "#delegate_class_name" do
+    it 'defaults to DelegateLoanEntryFields' do
+      expect( client.delegate_class_name ).to eq 'DelegateLoanEntryFields'
+    end
   end
 end

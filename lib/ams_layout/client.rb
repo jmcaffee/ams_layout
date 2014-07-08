@@ -13,10 +13,20 @@ module AmsLayout
   class Client
     include AmsLayout::Pages
 
+    attr_writer :layout_class_name
+    attr_writer :delegate_class_name
 
     def initialize
       # Make sure the configuration has been initialized.
       AmsLayout.configure
+    end
+
+    def layout_class_name
+      @layout_class_name ||= AmsLayout.configuration.layout_class_name
+    end
+
+    def delegate_class_name
+      @delegate_class_name ||= AmsLayout.configuration.delegate_class_name
     end
 
     ##
@@ -116,33 +126,47 @@ module AmsLayout
       File.write "#{layout_filename}.aliases.example", YAML.dump(aliases)
     end
 
-    def write_layout_class filename, layout_filename
+    def write_layout_class path, layout_filename
       assert_file_exists layout_filename
 
       layout = YAML::load_file(layout_filename)
       aliases = YAML::load_file("#{layout_filename}.aliases") if File.exist?("#{layout_filename}.aliases")
       writer = Writer.new
+      writer.class_name = layout_class_name
       writer.aliases = aliases unless aliases.nil?
 
-      File.open(filename, 'w') do |f|
+      File.open(layout_class_path(path), 'w') do |f|
         writer.write f, layout
       end
     end
 
-    def write_delegate_class filename, layout_filename
+    def write_delegate_class path, layout_filename
       assert_file_exists layout_filename
 
       layout = YAML::load_file(layout_filename)
       aliases = YAML::load_file("#{layout_filename}.aliases") if File.exist?("#{layout_filename}.aliases")
       writer = DelegateWriter.new
+      writer.class_name = delegate_class_name
       writer.aliases = aliases unless aliases.nil?
 
-      File.open(filename, 'w') do |f|
+      File.open(delegate_class_path(path), 'w') do |f|
         writer.write f, layout
       end
     end
 
   private
+
+    def layout_class_path path
+      path = Pathname(path)
+      filename = layout_class_name.snakecase + '.rb'
+      path = path + filename
+    end
+
+    def delegate_class_path path
+      path = Pathname(path)
+      filename = delegate_class_name.snakecase + '.rb'
+      path = path + filename
+    end
 
     def login_page force = false
       if force || @login_page.nil?
