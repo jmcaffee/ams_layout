@@ -64,5 +64,17 @@ describe AmsLayout::DelegateWriter do
       expect{ writer.aliases = alias_data }.to_not raise_exception
     end
   end
+
+  context "#class_name" do
+    it 'defaults to DelegateLoanEntryFields' do
+      expect( writer.class_name ).to eq 'DelegateLoanEntryFields'
+    end
+  end
+
+  context "#source_file_name" do
+    it 'defaults to delegate_loan_entry_fields.rb' do
+      expect( writer.source_file_name ).to eq 'delegate_loan_entry_fields.rb'
+    end
+  end
 end
 

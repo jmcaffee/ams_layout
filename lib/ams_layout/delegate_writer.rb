@@ -21,7 +21,7 @@ module AmsLayout
     #
 
     def source_file_name
-      @source_file_name ||= 'delegate_loan_entry_fields.rb'
+      class_name.snakecase + '.rb'
     end
 
     ##
@@ -29,7 +29,7 @@ module AmsLayout
     #
 
     def class_name
-      @class_name ||= 'DelegateLoanEntryFields'
+      @class_name ||= AmsLayout.configuration.delegate_class_name
     end
 
     ##
@@ -37,7 +37,7 @@ module AmsLayout
     #
 
     def delegated_class_name
-      @delegated_class_name ||= 'LoanEntryFields'
+      @delegated_class_name ||= AmsLayout.configuration.layout_class_name
     end
 
     ##
