@@ -11,16 +11,15 @@
 module AmsLayout
   class Writer
 
-    attr_writer :source_file_name
     attr_writer :class_name
     #attr_writer :aliases
 
     def source_file_name
-      @source_file_name ||= 'loan_entry_fields.rb'
+      class_name.snakecase + '.rb'
     end
 
     def class_name
-      @class_name ||= 'LoanEntryFields'
+      @class_name ||= AmsLayout.configuration.layout_class_name
     end
 
     def aliases
@@ -102,7 +101,7 @@ TEXT
         typed_field = '# unknown_field_type'
       end
 
-      field_label = snakecase label
+      field_label = label.snakecase
       text =<<TEXT
   #{typed_field}(:#{field_label}, id: '#{id}')
 TEXT
@@ -118,12 +117,6 @@ TEXT
 end # #{class_name}
 
 TEXT
-    end
-
-    def snakecase str
-      snake = str.gsub /[^a-zA-Z0-9]/, '_'
-      snake = snake.gsub /_+/, '_'
-      snake.downcase
     end
   end # Writer
 end # AmsLayout

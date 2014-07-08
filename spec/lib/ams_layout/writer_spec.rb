@@ -48,5 +48,17 @@ describe AmsLayout::Writer do
     expect(target_file.exist?).to eq true
     expect(assert_file_contains(target_file,'text_field(:alias1_borrower_name'))
   end
+
+  context "#class_name" do
+    it 'defaults to LoanEntryFields' do
+      expect( writer.class_name ).to eq 'LoanEntryFields'
+    end
+  end
+
+  context "#source_file_name" do
+    it 'defaults to loan_entry_fields.rb' do
+      expect( writer.source_file_name ).to eq 'loan_entry_fields.rb'
+    end
+  end
 end
 
