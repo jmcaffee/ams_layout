@@ -28,6 +28,13 @@ def clean_target_dir dir
   target_dir
 end
 
+def with_target_dir dir
+  working_dir = clean_target_dir dir
+  FileUtils.cd working_dir do
+    yield(working_dir)
+  end
+end
+
 def copy_from_spec_data src_file, dest_file
   src_path = spec_data_dir + src_file
   dest_path = spec_tmp_dir + dest_file
