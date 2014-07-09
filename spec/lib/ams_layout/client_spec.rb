@@ -27,39 +27,49 @@ describe AmsLayout::Client do
   end
 
   it '#write_layout' do
-    client.login('test', '***REMOVED***')
+    with_target_dir('client/layout') do |dir|
+      client.login('test', '***REMOVED***')
 
-    target_file = target_dir.join 'write-layout.yml'
+      target_file = Pathname(dir).join 'layout.yml'
 
-    expect{ client.write_layout(target_file) }.not_to raise_exception
-    expect(target_file.exist?).to eq true
+      expect{ client.write_layout(dir) }.not_to raise_exception
+      expect(target_file.exist?).to eq true
+    end
   end
 
   it '#write_aliases' do
-    target_file = target_dir.join 'layout.yml.aliases.example'
+    with_target_dir('client/layout/aliases') do |dir|
+      dir = Pathname(dir)
+      copy_from_spec_data 'layout-small.yml', dir + 'layout.yml'
+      target_file = dir + 'layout.yml.aliases.example'
 
-    expect{ client.write_alias_example(layout_yml) }.not_to raise_exception
-    expect(target_file.exist?).to eq true
+      expect{ client.write_alias_example(dir) }.not_to raise_exception
+      expect(target_file.exist?).to eq true
+    end
   end
 
   it '#write_layout_class' do
-    layout_file = copy_from_spec_data 'layout-small.yml', 'layout1.yml'
-    copy_from_spec_data 'layout-small.yml.aliases', 'layout1.yml.aliases'
+    with_target_dir('client/layout/class') do |dir|
+      dir = Pathname(dir)
+      copy_from_spec_data 'layout-small.yml', dir + 'layout.yml'
+      copy_from_spec_data 'layout-small.yml.aliases', dir + 'layout.yml.aliases'
+      target_file = dir + 'loan_entry_fields.rb'
 
-    target_file = target_dir.join 'loan_entry_fields.rb'
-
-    expect{ client.write_layout_class(target_dir, layout_file) }.not_to raise_exception
-    expect(target_file.exist?).to eq true
+      expect{ client.write_layout_class(dir, dir) }.not_to raise_exception
+      expect(target_file.exist?).to eq true
+    end
   end
 
   it '#write_delegate_class' do
-    layout_file = copy_from_spec_data 'layout-small.yml', 'layout1.yml'
-    copy_from_spec_data 'layout-small.yml.aliases', 'layout1.yml.aliases'
+    with_target_dir('client/layout/delegate') do |dir|
+      dir = Pathname(dir)
+      copy_from_spec_data 'layout-small.yml', dir + 'layout.yml'
+      copy_from_spec_data 'layout-small.yml.aliases', dir + 'layout.yml.aliases'
+      target_file = dir + 'delegate_loan_entry_fields.rb'
 
-    target_file = target_dir.join 'delegate_loan_entry_fields.rb'
-
-    expect{ client.write_delegate_class(target_dir, layout_file) }.not_to raise_exception
-    expect(target_file.exist?).to eq true
+      expect{ client.write_delegate_class(dir, dir) }.not_to raise_exception
+      expect(target_file.exist?).to eq true
+    end
   end
 
   context "#layout_class_name" do
