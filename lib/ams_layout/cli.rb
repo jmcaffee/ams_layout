@@ -8,6 +8,7 @@
 ##############################################################################
 
 require 'thor'
+require 'ams_layout/cli/config'
 require 'ams_layout/cli/generate'
 
 module AmsLayout
@@ -18,6 +19,9 @@ module AmsLayout
     rescue Exception => e
       raise e
     end
+
+    desc "config [COMMAND]", "modify configuration file"
+    subcommand "config", AmsLayout::Config
 
     desc "generate [COMMAND]", "generate one or more files"
     subcommand "generate", AmsLayout::Generate
