@@ -11,22 +11,18 @@
 # Re-open String class and add snakecase method.
 class String
   def snakecase
-    # Strip the following characters out: /, (, ), #, &
+    # Strip everything but alphanumerics, :, _, - and space
     # Replace :: with /
     # Separate CamelCased text with _
-    # Replace space with _
-    # Replace - with _
+    # Remove :
+    # Replace space and - with _
     # Replace multiple _ with one _
-    self.gsub("/", '').
-    gsub("(",'').
-    gsub(")",'').
-    gsub("#",'').
-    gsub("&",'').
+    self.gsub(/[^a-zA-Z0-9:_\s-]/, '').
     gsub(/::/, '/').
     gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
     gsub(/([a-z\d])([A-Z])/,'\1_\2').
-    gsub(" ",'_').
-    tr("-", "_").
+    gsub(/:/, '').
+    gsub(/[\s-]/, '_').
     gsub(/(_)+/,'_').
     downcase
   end
