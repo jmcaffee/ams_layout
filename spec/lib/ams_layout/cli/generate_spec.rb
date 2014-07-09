@@ -26,6 +26,13 @@ describe 'ams_layout generate' do
     let(:client) { mock_client }
 
     context "layout" do
+      before do
+        AmsLayout.configure do |config|
+          config.default_environment = :test
+          config.base_urls[:test] = 'http://example.com'
+          config.credentials[:test] = ['user', 'pass']
+        end
+      end
 
       it "calls the client object" do
         expect(client)
@@ -39,7 +46,7 @@ describe 'ams_layout generate' do
         expect(client)
           .to receive(:logout)
 
-        AmsLayout::Runner.new(%w(generate layout test/path), client, false).execute!
+        run_with_args(%w(generate layout test/path), client)
       end
     end
 
@@ -50,7 +57,7 @@ describe 'ams_layout generate' do
           .to receive(:write_layout_class)
           .with('path/to/class', 'path/to/layout')
 
-        AmsLayout::Runner.new(%w(generate cls path/to/class path/to/layout), client, false).execute!
+        run_with_args(%w(generate cls path/to/class path/to/layout), client)
       end
 
       context "with ClassName option" do
@@ -64,7 +71,7 @@ describe 'ams_layout generate' do
             .to receive(:write_layout_class)
             .with('path/to/class', 'path/to/layout')
 
-          AmsLayout::Runner.new(%w(generate cls --name=TestClass path/to/class path/to/layout), client, false).execute!
+          run_with_args(%w(generate cls --name=TestClass path/to/class path/to/layout), client)
         end
       end
     end
@@ -76,7 +83,7 @@ describe 'ams_layout generate' do
           .to receive(:write_delegate_class)
           .with('path/to/class', 'path/to/layout')
 
-        AmsLayout::Runner.new(%w(generate delegate path/to/class path/to/layout), client, false).execute!
+        run_with_args(%w(generate delegate path/to/class path/to/layout), client)
       end
 
       context "with DelegateClassName option" do
@@ -90,12 +97,19 @@ describe 'ams_layout generate' do
             .to receive(:write_delegate_class)
             .with('path/to/class', 'path/to/layout')
 
-          AmsLayout::Runner.new(%w(generate delegate --delegate=TestClass path/to/class path/to/layout), client, false).execute!
+          run_with_args(%w(generate delegate --delegate=TestClass path/to/class path/to/layout), client)
         end
       end
     end
 
     context "all" do
+      before do
+        AmsLayout.configure do |config|
+          config.default_environment = :test
+          config.base_urls[:test] = 'http://example.com'
+          config.credentials[:test] = ['user', 'pass']
+        end
+      end
 
       it "calls the client object" do
         expect(client)
@@ -116,7 +130,7 @@ describe 'ams_layout generate' do
           .to receive(:write_delegate_class)
           .with('path/to/files', 'path/to/files')
 
-        AmsLayout::Runner.new(%w(generate all path/to/files), client, false).execute!
+        run_with_args(%w(generate all path/to/files), client)
       end
 
       context "with ClassName option" do
@@ -126,7 +140,7 @@ describe 'ams_layout generate' do
             .to receive(:layout_class_name=)
             .with('TestClass')
 
-          AmsLayout::Runner.new(%w(generate all --name=TestClass path/to/files), client, false).execute!
+          run_with_args(%w(generate all --name=TestClass path/to/files), client)
         end
       end
 
@@ -137,7 +151,7 @@ describe 'ams_layout generate' do
             .to receive(:delegate_class_name=)
             .with('TestClass')
 
-          AmsLayout::Runner.new(%w(generate all --delegate=TestClass path/to/files), client, false).execute!
+          run_with_args(%w(generate all --delegate=TestClass path/to/files), client)
         end
       end
 
@@ -152,7 +166,7 @@ describe 'ams_layout generate' do
             .to receive(:delegate_class_name=)
             .with('DelTestClass')
 
-          AmsLayout::Runner.new(%w(generate all --name=TestClass --delegate=DelTestClass path/to/files), client, false).execute!
+          run_with_args(%w(generate all --name=TestClass --delegate=DelTestClass path/to/files), client)
         end
       end
     end
