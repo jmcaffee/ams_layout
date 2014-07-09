@@ -103,15 +103,15 @@ module AmsLayout
       parser.layout
     end
 
-    def write_layout filename, write_alias_example = false
+    def write_layout path, write_alias_example = false
       layout = get_field_data
-      File.write filename, YAML.dump(layout)
+      File.write layout_path(path), YAML.dump(layout)
 
-      write_alias_example filename if write_alias_example
+      write_alias_example layout_path(path) if write_alias_example
     end
 
-    def write_alias_example layout_filename
-      layout = YAML::load_file(layout_filename)
+    def write_alias_example layout_file_path
+      layout = YAML::load_file(layout_path(layout_file_path))
       aliases = {}
 
       layout.each do |section_label, fields|
@@ -124,14 +124,14 @@ module AmsLayout
         end # fields
       end # layout
 
-      File.write "#{layout_filename}.aliases.example", YAML.dump(aliases)
+      File.write "#{layout_path(layout_file_path)}.aliases.example", YAML.dump(aliases)
     end
 
-    def write_layout_class path, layout_filename
-      assert_file_exists layout_filename
+    def write_layout_class path, layout_file_path
+      assert_file_exists layout_path(layout_file_path)
 
-      layout = YAML::load_file(layout_filename)
-      aliases = YAML::load_file("#{layout_filename}.aliases") if File.exist?("#{layout_filename}.aliases")
+      layout = YAML::load_file(layout_path(layout_file_path))
+      aliases = YAML::load_file("#{layout_path(layout_file_path)}.aliases") if File.exist?("#{layout_path(layout_file_path)}.aliases")
       writer = Writer.new
       writer.class_name = layout_class_name
       writer.aliases = aliases unless aliases.nil?
@@ -141,11 +141,11 @@ module AmsLayout
       end
     end
 
-    def write_delegate_class path, layout_filename
-      assert_file_exists layout_filename
+    def write_delegate_class path, layout_file_path
+      assert_file_exists layout_path(layout_file_path)
 
-      layout = YAML::load_file(layout_filename)
-      aliases = YAML::load_file("#{layout_filename}.aliases") if File.exist?("#{layout_filename}.aliases")
+      layout = YAML::load_file(layout_path(layout_file_path))
+      aliases = YAML::load_file("#{layout_path(layout_file_path)}.aliases") if File.exist?("#{layout_path(layout_file_path)}.aliases")
       writer = DelegateWriter.new
       writer.class_name = delegate_class_name
       writer.aliases = aliases unless aliases.nil?
@@ -156,6 +156,12 @@ module AmsLayout
     end
 
   private
+
+    def layout_path path
+      path = Pathname(path)
+      filename = 'layout.yml'
+      path = path + filename
+    end
 
     def layout_class_path path
       path = Pathname(path)
