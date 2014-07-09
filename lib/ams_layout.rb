@@ -10,40 +10,91 @@
 require 'rubygems'
 require 'bundler/setup'
 
-# Re-open String class and add snakecase method.
-class String
-  def snakecase
-    # Strip the following characters out: /, (, ), #, &
-    # Replace :: with /
-    # Separate CamelCased text with _
-    # Replace space with _
-    # Replace - with _
-    # Replace multiple _ with one _
-    self.gsub("/", '').
-    gsub("(",'').
-    gsub(")",'').
-    gsub("#",'').
-    gsub("&",'').
-    gsub(/::/, '/').
-    gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
-    gsub(/([a-z\d])([A-Z])/,'\1_\2').
-    gsub(" ",'_').
-    tr("-", "_").
-    gsub(/(_)+/,'_').
-    downcase
-  end
-end
-
-
 module AmsLayout
+  CONFIG_FILE_NAME = '.ams_layout'
+
   class << self
     attr_accessor :configuration
     attr_accessor :client
   end
 
+  ##
+  # Setup ams_layout configuration
+  #
+  # Attempts to find and load a configuration file the first time
+  # it's requested. If a config file cannot be found on disk, a
+  # default configuration object is created.
+  #
+  # If a block is provided, the configuration object is yielded to the block
+  # after the configuration is loaded/created.
+  #
+
   def self.configure
-    self.configuration ||= Configuration.new
+    if self.configuration.nil?
+      unless self.load_configuration
+        self.configuration = Configuration.new
+      end
+    end
     yield(configuration) if block_given?
+  end
+
+  ##
+  # Walk up the directory tree from current working dir (pwd) till a file
+  # named .ams_layout is found.
+  #
+  # Returns file path if found, nil if not.
+  #
+
+  def self.find_config_path
+    path = Pathname(Pathname.pwd).ascend{|d| h=d+CONFIG_FILE_NAME; break h if h.file?}
+  end
+
+  ##
+  # Write configuration to disk
+  #
+  # Writes to current working dir (pwd) if path is nil
+  #
+  # Returns path of emitted file
+  #
+
+  def self.save_configuration(path = nil)
+    # If no path provided, see if we can find one in the dir tree.
+    if path.nil?
+      path = find_config_path
+    end
+
+    # Still no path? Use the current working dir.
+    if path.nil?
+      path = Pathname.pwd + CONFIG_FILE_NAME
+    end
+
+    path = Pathname(path).expand_path
+    File.write(path, YAML.dump(configuration))
+
+    path
+  end
+
+  ##
+  # Load the configuration from disk
+  #
+  # Returns true if config file found and loaded, false otherwise.
+  #
+
+  def self.load_configuration(path = nil)
+    # If no path provided, see if we can find one in the dir tree.
+    if path.nil?
+      path = find_config_path
+    end
+
+    return false if path.nil?
+    return false unless path.exist?
+
+    File.open(path, 'r') do |f|
+      self.configuration = YAML.load(f)
+      puts "configuration loaded from #{path}" if $debug
+    end
+
+    true
   end
 
 

@@ -1,6 +1,6 @@
 ##############################################################################
-# File::    cli.rb
-# Purpose:: Command Line Interface
+# File::    generate.rb
+# Purpose:: Generate command
 # 
 # Author::    Jeff McAffee 06/21/2014
 # Copyright:: Copyright (c) 2014, kTech Systems LLC. All rights reserved.
