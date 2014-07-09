@@ -22,8 +22,13 @@ module AmsLayout
 
       Directory must already exist or an error will be thrown.
     LD
+    option :env, :banner => "dev", :aliases => :e
     def layout(path)
-      client.login('user', 'pass')
+      env = AmsLayout.configuration.default_environment
+      env = options[:env] if options[:env]
+      user, pass = credentials env
+
+      client.login(user, pass)
       client.write_layout path, false
       client.logout
     end
@@ -121,6 +126,15 @@ module AmsLayout
 
     def client
       AmsLayout.client
+    end
+
+    def credentials env
+      user, pass = AmsLayout.configuration.credentials[env]
+      if user.nil? || pass.nil?
+        user = ask "username for #{env} environment:"
+        pass = ask "password:"
+      end
+      [user, pass]
     end
   end
 end # AmsLayout
