@@ -151,15 +151,6 @@ module AmsLayout
     end
   end # Configuration
 
-  def self.create_layout filename
-    browser = BrowserLoader.init_browser
-
-    login_page = LoginPage.new
-
-    parser = Parser.new
-    parser.parse html
-    File.write(filename, YAML.dump(parser.layout))
-  end
 
   class Runner
     def initialize(argv, client = AmsLayout::Client.new, exit_code = true)
