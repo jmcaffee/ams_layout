@@ -101,9 +101,14 @@ module AmsLayout
     LD
     option :name, :banner => "ClassName", :aliases => :n
     option :delegate, :banner => "DelegateClassName", :aliases => :d
+    option :env, :banner => "dev", :aliases => :e
     def all(path)
+      env = AmsLayout.configuration.default_environment
+      env = options[:env] if options[:env]
+      user, pass = credentials env
+
       # Generate layout file
-      client.login('user', 'pass')
+      client.login(user, pass)
       client.write_layout path, false
       client.logout
 
