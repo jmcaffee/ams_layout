@@ -8,6 +8,7 @@
 ##############################################################################
 
 require 'ams_layout/pages'
+require 'ams_layout/core_ext'
 
 module AmsLayout
   class Client

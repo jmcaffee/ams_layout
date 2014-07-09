@@ -8,6 +8,8 @@
 # Website::   http://ktechsystems.com
 ##############################################################################
 
+require 'ams_layout/core_ext'
+
 module AmsLayout
   class DelegateWriter
 
