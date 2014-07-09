@@ -15,6 +15,7 @@ describe 'ams_layout executable' do
 
       expect( output ).to include "help [COMMAND]"
       expect( output ).to include "generate [COMMAND]"
+      expect( output ).to include "config [COMMAND]"
     end
   end
 =begin
