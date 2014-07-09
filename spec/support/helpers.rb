@@ -25,6 +25,10 @@ def mock_client(field_data = {})
   mock_client
 end
 
+def run_with_args(args, client, exitcode = false)
+    AmsLayout::Runner.new(args, client, exitcode).execute!
+end
+
 def load_yml filename
   YAML::load_file(filename)
 end
