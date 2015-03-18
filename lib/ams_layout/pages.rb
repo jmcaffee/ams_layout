@@ -22,6 +22,7 @@ module AmsLayout
 
     def browser
       if @browser.nil?
+        BrowserLoader.user_data_path = AmsLayout.configuration.user_data_path
         @browser = BrowserLoader.init_browser AmsLayout.configuration.browser_timeout
 
         at_exit do

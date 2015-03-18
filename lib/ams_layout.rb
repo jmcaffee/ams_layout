@@ -109,6 +109,9 @@ module AmsLayout
     attr_accessor :layout_class_name
     attr_accessor :delegate_class_name
 
+    # Browser user data path (directory)
+    attr_accessor :user_data_path
+
     # Browser timeout in seconds. Default: 360 (6 mins).
     attr_accessor :browser_timeout
 
@@ -138,6 +141,7 @@ module AmsLayout
       @delegate_class_name = 'DelegateLoanEntryFields'
 
       @browser_timeout = 360
+      @user_data_path = File.absolute_path(File.join(__FILE__, '../../chrome-data'))
     end
 
     def base_url

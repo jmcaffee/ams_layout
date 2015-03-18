@@ -71,9 +71,14 @@ class BrowserLoader
     browser
   end
 
+  def self.user_data_path= path
+    @user_data_path = path
+  end
+
   def self.user_data_dir
     # Store chrome profile at chrome-data.
-    user_data_dir = File.absolute_path(File.join(__FILE__, '../../../chrome-data'))
+    #user_data_dir = File.absolute_path(File.join(__FILE__, '../../../chrome-data'))
+    user_data_dir = File.absolute_path(@user_data_path)
 
     fail "Chromium user-data directory does not exist at #{user_data_dir}" unless File.exist?(user_data_dir)
 
