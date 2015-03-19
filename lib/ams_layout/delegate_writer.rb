@@ -23,7 +23,7 @@ module AmsLayout
     #
 
     def source_file_name
-      class_name.snakecase + '.rb'
+      class_name.ams_layout_snakecase + '.rb'
     end
 
     ##
@@ -217,7 +217,7 @@ TEXT
     #
 
     def text_field_methods label, id, type
-      field_label = snakecase label
+      field_label = label.ams_layout_snakecase
       field_id = '#' + id
 
       if field_id.include? 'PlaceHolder1_cn'
@@ -240,7 +240,7 @@ TEXT
     #
 
     def float_field_methods label, id, type
-      field_label = snakecase label
+      field_label = label.ams_layout_snakecase
       field_id = '#' + id
 
       text =<<TEXT
@@ -264,7 +264,7 @@ TEXT
     #
 
     def textarea_field_methods label, id, type
-      field_label = snakecase label
+      field_label = label.ams_layout_snakecase
       field_id = '#' + id
 
       text =<<TEXT
@@ -283,7 +283,7 @@ TEXT
     #
 
     def select_field_methods label, id, type
-      field_label = snakecase label
+      field_label = label.ams_layout_snakecase
       field_id = '#' + id
 
       text =<<TEXT
@@ -302,7 +302,7 @@ TEXT
     #
 
     def checkbox_field_methods label, id, type
-      field_label = snakecase label
+      field_label = label.ams_layout_snakecase
       field_id = '#' + id
 
       text =<<TEXT
@@ -339,7 +339,7 @@ TEXT
     # Convert a field name to snake_case
     #
 
-    def snakecase str
+    def delme_snakecase str
       snake = str.gsub /[^a-zA-Z0-9]/, '_'
       snake = snake.gsub /_+/, '_'
       snake.downcase

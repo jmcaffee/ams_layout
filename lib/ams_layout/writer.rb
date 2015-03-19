@@ -17,7 +17,7 @@ module AmsLayout
     #attr_writer :aliases
 
     def source_file_name
-      class_name.snakecase + '.rb'
+      class_name.ams_layout_snakecase + '.rb'
     end
 
     def class_name
@@ -103,7 +103,7 @@ TEXT
         typed_field = '# unknown_field_type'
       end
 
-      field_label = label.snakecase
+      field_label = label.ams_layout_snakecase
       text =<<TEXT
   #{typed_field}(:#{field_label}, id: '#{id}')
 TEXT

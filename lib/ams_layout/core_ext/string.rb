@@ -10,7 +10,7 @@
 
 # Re-open String class and add snakecase method.
 class String
-  def snakecase
+  def ams_layout_snakecase
     # Strip everything but alphanumerics, :, _, - and space
     # Replace :: with /
     # Separate CamelCased text with _

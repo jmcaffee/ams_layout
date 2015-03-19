@@ -165,13 +165,13 @@ module AmsLayout
 
     def layout_class_path path
       path = Pathname(path)
-      filename = layout_class_name.snakecase + '.rb'
+      filename = layout_class_name.ams_layout_snakecase + '.rb'
       path = path + filename
     end
 
     def delegate_class_path path
       path = Pathname(path)
-      filename = delegate_class_name.snakecase + '.rb'
+      filename = delegate_class_name.ams_layout_snakecase + '.rb'
       path = path + filename
     end
 
