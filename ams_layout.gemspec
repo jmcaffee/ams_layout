@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jeff@ktechsystems.com"]
   spec.summary       = %q{Generate AMS Portal control field configuration data}
   spec.description   = %q{Generate AMS Portal control field configuration data}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/jmcaffee/ams_layout"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
