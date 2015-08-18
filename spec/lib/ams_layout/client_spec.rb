@@ -6,6 +6,13 @@ describe AmsLayout::Client do
     target_dir = clean_target_dir 'client'
   }
 
+  let(:test_pwd) {
+    test_pwd = ENV['AMS_TEST_USER_PWD']
+    if test_pwd.nil?
+      fail "Set AMS_TEST_USER_PWD to the 'test' user's password in an environment variable"
+    end
+  }
+
   let(:layout_yml) {
     #FileUtils.cp spec_data_dir + 'layout-small.yml', target_dir
     copy_from_spec_data 'layout-small.yml', target_dir + 'layout.yml'
@@ -13,7 +20,7 @@ describe AmsLayout::Client do
   }
 
   it '#login' do
-    expect{ client.login('test', '***REMOVED***') }.not_to raise_exception
+    expect{ client.login('test', test_pwd) }.not_to raise_exception
   end
 
   it '#logout' do
@@ -21,14 +28,14 @@ describe AmsLayout::Client do
   end
 
   it '#get_field_data' do
-    client.login('test', '***REMOVED***')
+    client.login('test', test_pwd)
 
     expect{ client.get_field_data }.not_to raise_exception
   end
 
   it '#write_layout' do
     with_target_dir('client/layout') do |dir|
-      client.login('test', '***REMOVED***')
+      client.login('test', test_pwd)
 
       target_file = Pathname(dir).join 'layout.yml'
 

@@ -19,6 +19,11 @@ task :console do
   require 'pry'
   ARGV.clear
 
+  test_pwd = ENV['AMS_TEST_USER_PWD']
+  if test_pwd.nil?
+    puts "Set AMS_TEST_USER_PWD to the 'test' user's password in an environment variable"
+  end
+
   def console_help
     puts <<CONSOLE_HELP
  AmsLayout Console
@@ -53,12 +58,12 @@ CONSOLE_HELP
   end
 
   def get_layout
-    client.login 'test', '***REMOVED***'
+    client.login 'test', test_pwd
     client.get_field_data
   end
 
   def write_layout filename, write_alias_example = false
-    client.login 'test', '***REMOVED***'
+    client.login 'test', test_pwd
     client.write_layout filename, write_alias_example
   end
 
