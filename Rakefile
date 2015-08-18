@@ -1,11 +1,16 @@
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
+require 'rake/clean'
 
 require_relative 'lib/ams_layout/browser_loader'
 
 RSpec::Core::RakeTask.new(:spec)
 
+##############################################################################
+
 task :default => :spec
+
+##############################################################################
 
 desc "start a console"
 task :console do
@@ -13,10 +18,6 @@ task :console do
   require 'bundler/setup'
   require 'pry'
   ARGV.clear
-
-  #AdminModule.configure do |config|
-  #  config.credentials = { :dev => ['admin', '***REMOVED***'] }
-  #end
 
   def console_help
     puts <<CONSOLE_HELP
@@ -34,7 +35,7 @@ task :console do
     write_layout_class filename, layout_file    - create Layout class
     write_delegate_class filename, layout_file  - create Delegate class
 
-    
+
 CONSOLE_HELP
   end
 
@@ -100,6 +101,8 @@ CONSOLE_HELP
   console_help
   Pry.start
 end
+
+##############################################################################
 
 desc 'Start chrome with data dir'
 task :start_chrome do
