@@ -2,7 +2,7 @@ require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 require 'rake/clean'
 
-require_relative 'lib/ams_layout/browser_loader'
+require 'browser_loader'
 
 RSpec::Core::RakeTask.new(:spec)
 

@@ -189,7 +189,7 @@ end # AmsLayout
 AmsLayout.configure
 
 require "ams_layout/version"
-require "ams_layout/browser_loader"
+require "browser_loader"
 require 'ams_layout/client'
 require "ams_layout/parser"
 require "ams_layout/writer"

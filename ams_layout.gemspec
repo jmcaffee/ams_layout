@@ -29,4 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'ktutils'
   spec.add_runtime_dependency 'page-object'
   spec.add_runtime_dependency 'nokogiri'
+  spec.add_runtime_dependency 'browser_loader'
 end
