@@ -11,6 +11,7 @@ describe AmsLayout::Client do
     if test_pwd.nil?
       fail "Set AMS_TEST_USER_PWD to the 'test' user's password in an environment variable"
     end
+    test_pwd
   }
 
   let(:layout_yml) {
